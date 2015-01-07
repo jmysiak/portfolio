@@ -1,4 +1,9 @@
 # Site settings
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+layouts:     ./_layouts
+
 title: Your awesome title
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
