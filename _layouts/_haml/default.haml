@@ -6,9 +6,10 @@
   %body
     {% include header.html %}
 
-    .page-content
-      .wrapper
-        {{ content }}
+    .container
+      .row
+        .col-md-12
+          {{ content }}
     {% include footer.html %}
     {% include js.html %}
 
