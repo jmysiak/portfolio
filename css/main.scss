@@ -1,54 +1,439 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
-@charset "utf-8";
 
 
+$headings-font-weight: 400;
 
-// Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+@import
+  "bourbon",
+  "bourbon-deprecated-upcoming",
+  "bootstrap",
+  "partials"
+;
 
-$spacing-unit:     30px;
+/* --------------------------------
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+Primary style
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+-------------------------------- */
 
-// Width of the content area
-$content-width:    800px;
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-$on-palm:          600px;
-$on-laptop:        800px;
+*, *:after, *:before {
+  @include box-sizing(border-box);
+}
 
+html, body {
+  /* you need to set this to assign to the main element a min height of 100% */
+  height: 100%;
+}
 
+body {
+  font: {
+    family: $primary-font;
+  }
+  color: $main-text;
+  background-color: $background;
+}
 
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
+a {
+  color: $link;
+  text-decoration: none;
+}
+
+/* --------------------------------
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+
+.img-replace { /* replace text with a background-image */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* --------------------------------
+
+Main components
+
+-------------------------------- */
+
+.main-content {
+  /* set a min-height and a z-index to be sure that the main element completely covers the lateral menu */
+  min-height: 100%;
+  position: relative;
+  background-color: $background;
+  z-index: $content-zindex;
+
+  h1 {
+    position: absolute;
+    @include center(xy);
+  }
+
+  //we assign a top padding since the header is in position absolute or fixed
+  // padding-top: $header-S;
+
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+
+  @include transition-property(transform);
+  @include transition-duration(.4s);
+
+  &.lateral-menu-is-open {
+    /* translate to show the lateral menu - all content needs to be put in the .main-content to translate*/
+    @include transform(translateX(260px));
+  }
+
+  @include MQ(M) {
+    // padding-top: $header-M;
+  }
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: $header-S;
+  width: 70px;
+  z-index: $header-zindex;
+
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+
+  @include transition-property(transform);
+  @include transition-duration(.4s);
+
+  &.lateral-menu-is-open {
+    /* translate to show the lateral menu */
+    @include transform(translateX(260px));
+  }
+
+  //assign this class to the header if you want a fixed navigation
+  &.is-fixed {
+    position: fixed;
+  }
+
+  @include MQ(M) {
+    height: $header-M;
+  }
+}
+
+#logo {
+  display: block;
+  float: left;
+  margin: 12px 0 0 20px;
+
+  img {
+    display: block;
+  }
+
+  @include MQ(M) {
+    margin: 22px 0 0 30px;
+  }
+}
+
+#top-nav {
+  position: absolute;
+  top: 0;
+  right: 120px;
+  height: 100%;
+
+  display: none;
+
+  ul {
+    height: 100%;
+    padding-top: 18px;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 1em;
+  }
+
+  a {
+    display: inline-block;
+    padding: .5em;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &.current {
+      background-color: $color-2;
     }
+
+    .no-touch &:hover {
+      color: rgba(#FFF, .7);
+    }
+  }
+
+  @include MQ(M) {
+    display: block;
+  }
+}
+
+#menu-trigger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 70px;
+
+  .menu-icon {
+    /* this span is the central line in the menu menu */
+    display: inline-block;
+    position: absolute;
+    @include center; // mixin inside partials > _mixings.scss
+    width: 18px;
+    height: 2px;
+    background-color: #231f20;
+
+    /* these are the upper and lower lines in the menu menu */
+    &::before, &:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: inherit;
+      left: 0;
+    }
+
+    &::before {
+      bottom: 5px;
+    }
+
+    &::after {
+      top: 5px;
+    }
+  }
+
+  &.is-clicked {
+    .menu-icon {
+      background-color: rgba(#231f20, 0);
+
+      &::before, &::after {
+        background-color: rgba(#231f20, 1);
+      }
+
+      &::before {
+        bottom: 0;
+        @include transform(rotate(45deg));
+      }
+
+      &::after {
+        top: 0;
+        @include transform(rotate(-45deg));
+      }
+    }
+  }
+
+  @include MQ(M) {
+    width: 70px;
+    // padding-left: 1.25em;
+
+    .menu-icon {
+      // left: auto;
+      // right: 1.25em;
+      @include center(xy);
+      // @include transform(translateX(0));
+    }
+  }
+}
+
+#lateral-nav {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+
+  /* the secondary navigation is covered by the main element */
+  z-index: $secondary-nav; // see partials > _variables.scss
+
+  width: 260px;
+  background-color: #ffffff;
+
+  overflow-y: auto;
+
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+
+  -webkit-transition: -webkit-transform .25s 0s, visibility 0s .4s;
+  -moz-transition: -moz-transform .25s 0s, visibility 0s .4s;
+  transition: transform .25s 0s, visibility 0s .4s;
+
+  /* this creates the subtle slide in animation of the navigation */
+  @include transform(translateX(-80px));
+
+  .menu {
+    width: 100%;
+    position: absolute;
+    @include center(y);
+  }
+
+  .navigation {
+    margin: 10px 0;
+    @include transition(opacity .25s ease-in-out);
+    @include transform(translateX(-10px));
+    opacity: 0;
+    li {
+      margin-bottom: 10px;
+      a {
+        position: relative;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 2px;
+        padding-bottom: 2px
+      }
+    }
+  }
+
+  .sub-menu {
+    padding: 8px 15px;
+    display: none;
+    li {
+      margin-bottom: 5px;
+      a {
+        font-size: 10px;
+        color: #99999a;
+        font-weight: 400;
+      }
+    }
+  }
+
+  a {
+    // display: block;
+    line-height: 2em;
+    padding: 0;
+    color: #444448;
+
+    &.current {
+      color: #28d3ed;
+    }
+
+    .no-touch &:hover {
+      // color: #18191a;
+      border-bottom: 1px solid #dddddf;
+      text-decoration: none;
+    }
+    .no-touch &:focus {
+      text-decoration: none;
+    }
+    .no-touch &:active {
+      text-decoration: none;
+    }
+  }
+
+  @include MQ(M) {
+    .navigation {
+      margin: 20px 0;
+    }
+  }
+
+  &.lateral-menu-is-open {
+    @include transform(translateX(0));
+    visibility: visible;
+    -webkit-transition: -webkit-transform .4s 0s, visibility 0s 0s;
+    -moz-transition: -moz-transform .4s 0s, visibility 0s 0s;
+    transition: transform .4s 0s, visibility 0s 0s;
+
+    /* smooth the scrolling on touch devices - webkit browsers */
+    -webkit-overflow-scrolling: touch;
+
+    .navigation {
+      @include transform(translateX(0));
+
+      // transition: all 1s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+      // -webkit-transition: all 1s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+
+      transition: transform .75s .125s ease-in-out, opacity 1.55s 0s ease-in-out;
+      -webkit-transition: -webkit-transform .75s .125s ease-in-out, opacity 1.55s 0s ease-in-out;
+      -moz-transition: -moz-transform .75s .125s ease-in-out, opacity 1.55s 0s ease-in-out;
+
+      opacity: 1;
+    }
+
+  }
 }
 
 
+/* style menu items which have a submenu  */
+#lateral-nav .item-has-children > a {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting",
-        "bootstrap"
+  /* this is the right arrow to show that the item has a submenu  */
 
-;
+
+  &.submenu-open::after {
+    // @include transform(translateY(-50%) rotate(90deg));
+
+  }
+}
+
+#lateral-nav .socials {
+  @include clearfix;
+  padding: 0 32px;
+
+  a {
+    height: 32px;
+    width: 32px;
+    float: left;
+    padding: 0;
+    background-image: url('../img/socials.svg');
+    background-repeat: no-repeat;
+    background-size: 128px 64px;
+    background-color: #FFF;
+    margin-right: .5em;
+    @include border-radius;
+
+    &.twitter {
+      background-position: 0 0;
+    }
+
+    &.github {
+      background-position: -32px 0;
+    }
+
+    &.facebook {
+      background-position: -64px 0;
+    }
+
+    &.google {
+      background-position: -96px 0;
+    }
+
+    .no-touch &:hover {
+      background-color: $color-1;
+
+      &.twitter {
+        background-position: 0 -32px;
+      }
+
+      &.github {
+        background-position: -32px -32px;
+      }
+
+      &.facebook {
+        background-position: -64px -32px;
+      }
+
+      &.google {
+        background-position: -96px -32px;
+      }
+    }
+  }
+}

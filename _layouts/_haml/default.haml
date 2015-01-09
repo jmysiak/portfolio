@@ -4,11 +4,19 @@
     {% include head.html %}
 
   %body
-    {% include header.html %}
 
-    .page-content
-      .wrapper
-        {{ content }}
-    {% include footer.html %}
+    %header
+      %a#menu-trigger{:href=>"#0"}
+        %span.menu-icon
+
+    %main.main-content
+      %h1 Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.
+
+      {{ content }}
+
+    {% include navigation.html %}
+
+    -# {% include footer.html %}
+
     {% include js.html %}
 

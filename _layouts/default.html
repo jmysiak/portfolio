@@ -4,13 +4,16 @@
     {% include head.html %}
   </head>
   <body>
-    {% include header.html %}
-    <div class='page-content'>
-      <div class='wrapper'>
-        {{ content }}
-      </div>
-    </div>
-    {% include footer.html %}
+    <header>
+      <a href='#0' id='menu-trigger'>
+        <span class='menu-icon'></span>
+      </a>
+    </header>
+    <main class='main-content'>
+      <h1>Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.</h1>
+      {{ content }}
+    </main>
+    {% include navigation.html %}
     {% include js.html %}
   </body>
 </html>
