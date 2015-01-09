@@ -452,8 +452,8 @@ header {
   background-color: #ffffff;
   border-radius: 100%;
 
-  -webkit-animation: scaleout 1.0s infinite ease-in-out;
-  animation: scaleout 1.0s infinite ease-in-out;
+  -webkit-animation: scaleout 1.0s -0.9s infinite ease-in-out;
+  animation: scaleout 1.0s -0.9s infinite ease-in-out;
 }
 
 @-webkit-keyframes scaleout {

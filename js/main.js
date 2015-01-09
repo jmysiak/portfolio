@@ -14,7 +14,10 @@ jQuery(document).ready(function($){
       $('body').toggleClass('overflow-hidden');
     });
     $('#lateral-nav').toggleClass('lateral-menu-is-open');
-
+    //check if submenu is open
+    if($('#workLink').hasClass('submenu-open')) {
+      $('#workLink').removeClass('submenu-open').next('.sub-menu').delay(1200).slideUp(200);
+    }
     //check if transitions are not supported - i.e. in IE9
     if($('html').hasClass('no-csstransitions')) {
       $('body').toggleClass('overflow-hidden');
@@ -30,11 +33,14 @@ jQuery(document).ready(function($){
         $('body').removeClass('overflow-hidden');
       });
       $('#lateral-nav').removeClass('lateral-menu-is-open');
+      //check if submenu is open
+      if($('#workLink').hasClass('submenu-open')) {
+        $('#workLink').removeClass('submenu-open').next('.sub-menu').delay(1200).slideUp(200);
+      }
       //check if transitions are not supported
       if($('html').hasClass('no-csstransitions')) {
         $('body').removeClass('overflow-hidden');
       }
-
     }
   });
 

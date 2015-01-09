@@ -1,8 +1,9 @@
 <script src="{{ '/js/jquery-1.11.2.min.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/js/fakeLoader.js' | prepend: site.baseurl }}"></script>
 <script>
+  $('body').delay(100).fadeIn(400);
   $("#fakeLoader").fakeLoader({
-    timeToHide:1800,
+    timeToHide:2000,
     bgColor:"#28d3ed",
     spinner:"spinner8"
   });
