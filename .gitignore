@@ -3,3 +3,4 @@ _site
 Gemfile.lock
 Gemfile
 Rakefile
+_config.yml

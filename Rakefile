@@ -34,10 +34,19 @@ namespace :haml do
     puts 'Parsed haml index files'
   end
 
+  desc 'Parse haml work files'
+  task :works do
+    Dir.glob('work/index.haml') do |path|
+      convert path, File.dirname(path)
+    end
+
+    puts 'Parsed haml work files'
+  end
+
 end
 
 desc 'Parse all haml items'
-task haml: ['haml:layouts', 'haml:includes', 'haml:indexes']
+task haml: ['haml:layouts', 'haml:includes', 'haml:indexes', 'haml:works']
 
 desc 'Build all haml for deployment'
 task build: [:haml]
