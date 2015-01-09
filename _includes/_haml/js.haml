@@ -1,4 +1,12 @@
 %script{:src  => "{{ '/js/jquery-1.11.2.min.js' | prepend: site.baseurl }}"}
+%script{:src  => "{{ '/js/fakeLoader.js' | prepend: site.baseurl }}"}
+:javascript
+  $("#fakeLoader").fakeLoader({
+    timeToHide:1800,
+    bgColor:"#28d3ed",
+    spinner:"spinner8"
+  });
 %script{:src  => "{{ '/js/bootstrap.min.js' | prepend: site.baseurl }}"}
 %script{:src  => "{{ '/js/main.js' | prepend: site.baseurl }}"}
+
 
