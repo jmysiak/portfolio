@@ -72,10 +72,11 @@ Main components
   position: relative;
   background-color: $background;
   z-index: $content-zindex;
+  text-align: center;
 
   h1 {
-    position: absolute;
-    @include center(xy);
+    // position: absolute;
+    // @include center(xy);
   }
 
   //we assign a top padding since the header is in position absolute or fixed

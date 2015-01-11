@@ -1,32 +1,22 @@
 %nav#lateral-nav
   .menu.text-center
     %ul.navigation.list-unstyled
-      %li.item-has-children
-        %a#workLink{:href => "#0"} Work
+      %li{"data-menuanchor" => "homePage"}
+        %a{:href => "#homePage"} HOME
+
+      %li.item-has-children{"data-menuanchor" => "workPage"}
+        %a#workLink{:href => "#workPage"} WORK
         %ul.sub-menu.list-unstyled
           %li
-            %a{:href => "#0"} Brand
+            %a{:href => "#workPage/0"} Doggyloot
           %li
-            %a{:href => "#0"} Web Apps
+            %a{:href => "#workPage/1"} Doggyloot Admin
           %li
-            %a{:href => "#0"} Mobile Apps
-      / item-has-children
+            %a{:href => "#workPage/2"} Personal
 
-      %li.item-has-children
-        %a{:href => "#0"} ABOUT
-        %ul.sub-menu.list-unstyled
-          %li
-            %a{:href => "#0"} Product 1
-          %li
-            %a{:href => "#0"} Product 2
-          %li
-            %a{:href => "#0"} Product 3
-          %li
-            %a{:href => "#0"} Product 4
-          %li
-            %a{:href => "#0"} Product 5
-      / item-has-children
+      %li{"data-menuanchor" => "aboutPage"}
+        %a{:href => "#aboutPage"} ABOUT
 
-      %li
-        %a.current{:href => "#0"} CONTACT
+      %li{"data-menuanchor" => "contactPage"}
+        %a.current{:href => "#contactPage"} CONTACT
 

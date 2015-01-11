@@ -10,3 +10,13 @@
 </script>
 <script src="{{ '/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/js/main.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/js/fullPage.js' | prepend: site.baseurl }}"></script>
+<script>
+  $(document).ready(function() {
+    $('#fullpage').fullpage({
+      anchors: ['homePage', 'workPage', 'aboutPage', 'contactPage'],
+      menu: '#lateral-nav',
+      sectionsColor: ['#f6f6f6', '#f68ea5', '#7e7bc0']
+    });
+  });
+</script>
