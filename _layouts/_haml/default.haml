@@ -5,48 +5,100 @@
 
   %body{:style => "display: none;"}
     #fakeLoader
-    %header
+    %header.is-fixed
       %a#menu-trigger{:href=>"#0"}
         %span.menu-icon
 
     #fullpage.main-content
       .section#section0
-        .container
+        .container-fluid
           .row
-            .col-md-12.slideshow
-              %img{:src => "{{ '/src/img/ph-img-2.jpg' | prepend: site.baseurl }}"}
-
-              %h1 Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.
+            .col-md-12
+              %img.img-responsive.slideshow{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
+          .row.work-content
+            .col-md-8.col-md-offset-2
+              .row.slideshow
+                .col-md-8
+                  %h1 DOGGYLOOT
+                  %p.subtitle UI/UX Design, Web Development
+                  %p Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis.
+                .col-md-2.col-md-offset-2
+                  %p PREV NEXT
       .section#section1
         .slide
-          .container
+          .container-fluid
             .row
-              .col-md-12.slideshow
-                %img{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
-                %h1 Doggyloot
-                %p Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor.
+              .col-md-12
+                %img.img-responsive.slideshow{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
+            .row.work-content
+              .col-md-8.col-md-offset-2
+                .row.slideshow
+                  .col-md-8
+                    %h1 DOGGYLOOT
+                    %p.subtitle UI/UX Design, Web Development
+                    %p Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis.
+                  .col-md-2.col-md-offset-2
+                    %p PREV NEXT
+
         .slide
-          .container
+          .container-fluid
             .row
-              .col-md-12.slideshow
-                %h1 Doggyloot Admin
-                %p Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus.
+              .col-md-12
+                %img.img-responsive.slideshow{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
+            .row.work-content
+              .col-md-8.col-md-offset-2
+                .row.slideshow
+                  .col-md-8
+                    %h1 DOGGYLOOT
+                    %p.subtitle UI/UX Design, Web Development
+                    %p Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis.
+                  .col-md-2.col-md-offset-2
+                    %p PREV NEXT
+
         .slide
-          .container
+          .container-fluid
             .row
-              .col-md-12.slideshow
-                %h1 Personal
-                %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam.
+              .col-md-12
+                %img.img-responsive.slideshow{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
+            .row.work-content
+              .col-md-8.col-md-offset-2
+                .row.slideshow
+                  .col-md-8
+                    %h1 DOGGYLOOT
+                    %p.subtitle UI/UX Design, Web Development
+                    %p Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis.
+                  .col-md-2.col-md-offset-2
+                    %p PREV NEXT
+
       .section#section2
-        .container
+        .container-fluid
           .row
-            .col-md-12.slideshow
-              %h1 Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes nascetur.
+            .col-md-12
+              %img.img-responsive.slideshow{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
+          .row.work-content
+            .col-md-8.col-md-offset-2
+              .row.slideshow
+                .col-md-8
+                  %h1 DOGGYLOOT
+                  %p.subtitle UI/UX Design, Web Development
+                  %p Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis.
+                .col-md-2.col-md-offset-2
+                  %p PREV NEXT
+
       .section#section3
-        .container
+        .container-fluid
           .row
-            .col-md-12.slideshow
-              %h1 Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes nascetur.
+            .col-md-12
+              %img.img-responsive.slideshow{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
+          .row.work-content
+            .col-md-8.col-md-offset-2
+              .row.slideshow
+                .col-md-8
+                  %h1 DOGGYLOOT
+                  %p.subtitle UI/UX Design, Web Development
+                  %p Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis.
+                .col-md-2.col-md-offset-2
+                  %p PREV NEXT
 
     -# %main.main-content
     -#   %h1 Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.

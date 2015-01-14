@@ -34,7 +34,7 @@ body {
   font: {
     family: $primary-font;
   }
-  color: $main-text;
+  color: #484848;
   background-color: $background;
   // opacity: 0;
   // @include transition(opacity .55s ease-in 0s);
@@ -79,9 +79,32 @@ Main components
   z-index: 2;
   text-align: center;
 
-  h1 {
-    // position: absolute;
-    // @include center(xy);
+  .work-content {
+    border-top: 1px solid rgba(0,0,0,0.07);
+    text-align: left;
+    h1 {
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+      color: #484848;
+    }
+    p {
+      font-size: 16px;
+      color: #afafaf;
+      letter-spacing: .25px;
+      line-height: 1.5;
+      &.subtitle {
+        font-size: 18px;
+        letter-spacing: .5px;
+        margin-bottom: 14px;
+        line-height: $line-height-base;
+        color: #646464;
+      }
+    }
+    .col-md-2 {
+      text-align: right;
+    }
   }
 
   //we assign a top padding since the header is in position absolute or fixed
@@ -130,7 +153,7 @@ header {
   }
 
   @include MQ(M) {
-    height: $header-M;
+    // height: $header-M;
   }
 }
 
@@ -322,15 +345,19 @@ header {
         position: relative;
         text-transform: uppercase;
         font-weight: 600;
-        font-size: 13px;
+        font-size: 14px;
         letter-spacing: 2.25px;
         padding-bottom: 2px;
         @include transition(color 0.2s ease-out);
         line-height: 2em;
         color: #afafaf;
 
-        &.current {
-          color: #28d3ed;
+        &#workLink {
+          &.submenu-open {
+            border-bottom: 1px solid #dddddf;
+            text-decoration: none;
+            color: #484848;
+          }
         }
 
         &:hover, .no-touch &:hover {
@@ -357,7 +384,10 @@ header {
         font-size: 10px;
         color: #afafaf;
         font-weight: 600;
-        &:hover {color: #646464;}
+        &:hover, .no-touch &:hover {
+          color: #646464;
+          border-bottom: none;
+        }
       }
     }
   }
@@ -398,15 +428,14 @@ header {
   }
 }
 
-.slideshow {
+img.slideshow {
+  width: 800px;
+  margin: 0 auto;
+  padding: 0px 0px 20px;
   @include transform(translateX(0));
   -webkit-transition: -webkit-transform .4s 0s;
   -moz-transition: -moz-transform .4s 0s;
   transition: transform .4s 0s;
-
-  img {
-    max-width: 800px;
-  }
   &.slideshow-active {
     @include transform(translateX(-130px));
     -webkit-transition: -webkit-transform .4s 0s;
@@ -415,6 +444,18 @@ header {
   }
 }
 
+.slideshow {
+  @include transform(translateX(0));
+  -webkit-transition: -webkit-transform .4s 0s;
+  -moz-transition: -moz-transform .4s 0s;
+  transition: transform .4s 0s;
+  &.slideshow-active {
+    @include transform(translateX(-130px));
+    -webkit-transition: -webkit-transform .4s 0s;
+    -moz-transition: -moz-transform .4s 0s;
+    transition: transform .4s 0s;
+  }
+}
 
 /* style menu items which have a submenu  */
 #lateral-nav .item-has-children > a {
