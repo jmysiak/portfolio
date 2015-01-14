@@ -100,7 +100,7 @@
 
       }else{
         $('html, body').css({
-          // 'overflow' : 'visible',
+          'overflow' : 'visible',
           'height' : 'initial'
         });
 

@@ -45,7 +45,16 @@ body {
 
 a {
   color: $link;
-  text-decoration: none;
+  &:focus, .no-touch &:focus {
+    text-decoration: none;
+    outline: none;
+    -moz-outline-style: none;
+  }
+  &:active, .no-touch &:active {
+    text-decoration: none;
+    outline: none;
+    -moz-outline-style: none;
+  }
 }
 
 /* --------------------------------
