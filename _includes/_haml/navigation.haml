@@ -1,8 +1,13 @@
 %nav#lateral-nav
   .menu.text-center
+    .brand{"data-menuanchor" => "homePage"}
+      %a.logo{:href=>"#homePage"}
+        %img{:src=>"{{ '/src/img/logo.svg' | prepend: site.baseurl }}"}
+
+
     %ul.navigation.list-unstyled
-      %li{"data-menuanchor" => "homePage"}
-        %a{:href => "#homePage"} HOME
+      -# %li.item-no-children{"data-menuanchor" => "homePage"}
+      -#   %a#homeLink{:href => "#homePage"} HOME
 
       %li.item-has-children{"data-menuanchor" => "workPage"}
         %a#workLink{:href => "#workPage"} WORK
@@ -14,9 +19,9 @@
           %li
             %a{:href => "#workPage/2"} Personal
 
-      %li{"data-menuanchor" => "aboutPage"}
-        %a{:href => "#aboutPage"} ABOUT
+      %li.item-no-children{"data-menuanchor" => "aboutPage"}
+        %a#aboutLink{:href => "#aboutPage"} ABOUT
 
-      %li{"data-menuanchor" => "contactPage"}
-        %a.current{:href => "#contactPage"} CONTACT
+      %li.item-no-children{"data-menuanchor" => "contactPage"}
+        %a#contactLink{:href => "#contactPage"} CONTACT
 

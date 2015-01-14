@@ -3,7 +3,7 @@
   %head
     {% include head.html %}
 
-  %body{:style=>"display: none;"}
+  %body{:style => "display: none;"}
     #fakeLoader
     %header
       %a#menu-trigger{:href=>"#0"}
@@ -13,31 +13,40 @@
       .section#section0
         .container
           .row
-            .col-md-12
+            .col-md-12.slideshow
+              %img{:src => "{{ '/src/img/ph-img-2.jpg' | prepend: site.baseurl }}"}
+
               %h1 Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis.
       .section#section1
         .slide
           .container
             .row
-              .col-md-12
+              .col-md-12.slideshow
+                %img{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
                 %h1 Doggyloot
                 %p Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor.
         .slide
           .container
             .row
-              .col-md-12
+              .col-md-12.slideshow
                 %h1 Doggyloot Admin
                 %p Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus.
         .slide
           .container
             .row
-              .col-md-12
+              .col-md-12.slideshow
                 %h1 Personal
                 %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam.
       .section#section2
-        %h1 Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes nascetur.
+        .container
+          .row
+            .col-md-12.slideshow
+              %h1 Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes nascetur.
       .section#section3
-        %h1 Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes nascetur.
+        .container
+          .row
+            .col-md-12.slideshow
+              %h1 Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes nascetur.
 
     -# %main.main-content
     -#   %h1 Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.

@@ -36,6 +36,11 @@ body {
   }
   color: $main-text;
   background-color: $background;
+  // opacity: 0;
+  // @include transition(opacity .55s ease-in 0s);
+  &.loaded {
+    opacity: 1;
+  }
 }
 
 a {
@@ -71,7 +76,7 @@ Main components
   min-height: 100%;
   position: relative;
   background-color: $background;
-  z-index: $content-zindex;
+  z-index: 2;
   text-align: center;
 
   h1 {
@@ -101,8 +106,8 @@ Main components
 
 header {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 8px;
+  left: 2px;
   height: $header-S;
   width: 70px;
   z-index: $header-zindex;
@@ -129,19 +134,19 @@ header {
   }
 }
 
-#logo {
-  display: block;
-  float: left;
-  margin: 12px 0 0 20px;
+// #logo {
+//   display: block;
+//   float: left;
+//   margin: 12px 0 0 20px;
 
-  img {
-    display: block;
-  }
+//   img {
+//     display: block;
+//   }
 
-  @include MQ(M) {
-    margin: 22px 0 0 30px;
-  }
-}
+//   @include MQ(M) {
+//     margin: 22px 0 0 30px;
+//   }
+// }
 
 #top-nav {
   position: absolute;
@@ -166,7 +171,7 @@ header {
     padding: .5em;
     color: #FFF;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
 
     &.current {
       background-color: $color-2;
@@ -197,6 +202,8 @@ header {
     width: 18px;
     height: 2px;
     background-color: #231f20;
+    transition: 0.6s ease;
+    transition-timing-function: cubic-bezier(.75, 0, .29, 1.01);
 
     /* these are the upper and lower lines in the menu menu */
     &::before, &:after {
@@ -206,6 +213,8 @@ header {
       position: absolute;
       background-color: inherit;
       left: 0;
+      transition: 0.6s ease;
+      transition-timing-function: cubic-bezier(.75, 0, .29, 1.01);
     }
 
     &::before {
@@ -232,7 +241,7 @@ header {
 
       &::after {
         top: 0;
-        @include transform(rotate(-45deg));
+        @include transform(rotate(-225deg));
       }
     }
   }
@@ -256,9 +265,10 @@ header {
   left: 0;
   top: 0;
   visibility: hidden;
+  border-right: 1px solid rgba(0,0,0,0.07);
 
   /* the secondary navigation is covered by the main element */
-  z-index: $secondary-nav; // see partials > _variables.scss
+  z-index: 1; // see partials > _variables.scss
 
   width: 260px;
   background-color: #ffffff;
@@ -280,22 +290,60 @@ header {
     width: 100%;
     position: absolute;
     @include center(y);
+    .brand {
+      margin-bottom: 48px;
+      .logo {
+        display: block;
+        // margin-bottom: 18px;
+        img {
+          width: 92px;
+        }
+      }
+    }
   }
 
   .navigation {
     margin: 10px 0;
-    @include transition(opacity .25s ease-in-out);
+    // @include transition(opacity .25s ease);
     @include transform(translateX(-10px));
+    transition: opacity .2s ease 0s;
+    -webkit-transition: opacity .2s ease 0s;
+    -moz-transition: opacity .2s ease 0s;
     opacity: 0;
     li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      &.active {
+        #homeLink, #workLink, #aboutLink, #contactLink {
+          color: #484848;
+          border-bottom: 1px solid #dddddf;
+        }
+      }
       a {
         position: relative;
         text-transform: uppercase;
-        font-weight: 700;
-        font-size: 12px;
-        letter-spacing: 2px;
-        padding-bottom: 2px
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 2.25px;
+        padding-bottom: 2px;
+        @include transition(color 0.2s ease-out);
+        line-height: 2em;
+        color: #afafaf;
+
+        &.current {
+          color: #28d3ed;
+        }
+
+        &:hover, .no-touch &:hover {
+          border-bottom: 1px solid #dddddf;
+          text-decoration: none;
+          color: #484848;
+        }
+        &:focus, .no-touch &:focus {
+          text-decoration: none;
+        }
+        &:active, .no-touch &:active {
+          text-decoration: none;
+        }
       }
     }
   }
@@ -307,33 +355,15 @@ header {
       margin-bottom: 5px;
       a {
         font-size: 10px;
-        color: #99999a;
-        font-weight: 400;
+        color: #afafaf;
+        font-weight: 600;
+        &:hover {color: #646464;}
       }
     }
   }
 
   a {
     // display: block;
-    line-height: 2em;
-    padding: 0;
-    color: #444448;
-
-    &.current {
-      color: #28d3ed;
-    }
-
-    .no-touch &:hover {
-      // color: #18191a;
-      border-bottom: 1px solid #dddddf;
-      text-decoration: none;
-    }
-    .no-touch &:focus {
-      text-decoration: none;
-    }
-    .no-touch &:active {
-      text-decoration: none;
-    }
   }
 
   @include MQ(M) {
@@ -358,13 +388,30 @@ header {
       // transition: all 1s cubic-bezier(0.230, 1.000, 0.320, 1.000);
       // -webkit-transition: all 1s cubic-bezier(0.230, 1.000, 0.320, 1.000);
 
-      transition: transform .75s .125s ease-in-out, opacity 1.55s 0s ease-in-out;
-      -webkit-transition: -webkit-transform .75s .125s ease-in-out, opacity 1.55s 0s ease-in-out;
-      -moz-transition: -moz-transform .75s .125s ease-in-out, opacity 1.55s 0s ease-in-out;
+      transition: transform .85s ease-in-out 0.0s, opacity 1.55s 0s ease-in-out;
+      -webkit-transition: -webkit-transform .85s ease-in-out 0.0s, opacity 1.55s 0s ease-in-out;
+      -moz-transition: -moz-transform .85s ease-in-out 0.0s, opacity 1.55s 0s ease-in-out;
 
       opacity: 1;
     }
 
+  }
+}
+
+.slideshow {
+  @include transform(translateX(0));
+  -webkit-transition: -webkit-transform .4s 0s;
+  -moz-transition: -moz-transform .4s 0s;
+  transition: transform .4s 0s;
+
+  img {
+    max-width: 800px;
+  }
+  &.slideshow-active {
+    @include transform(translateX(-130px));
+    -webkit-transition: -webkit-transform .4s 0s;
+    -moz-transition: -moz-transform .4s 0s;
+    transition: transform .4s 0s;
   }
 }
 
@@ -373,7 +420,7 @@ header {
 #lateral-nav .item-has-children > a {
   position: relative;
   text-transform: uppercase;
-  font-weight: 700;
+  // font-weight: 500;
 
   /* this is the right arrow to show that the item has a submenu  */
 
@@ -453,14 +500,24 @@ header {
   background-color: #ffffff;
   border-radius: 100%;
 
-  -webkit-animation: scaleout 1.0s -0.9s infinite ease-in-out;
-  animation: scaleout 1.0s -0.9s infinite ease-in-out;
+  -webkit-animation: scaleout 1.35s infinite ease-in-out -0.9s;
+  animation: scaleout 1.35s infinite ease-in-out -0.9s;
 }
 
 @-webkit-keyframes scaleout {
-  0% { -webkit-transform: scale(0.0) }
-  100% {
+  0% {
+    -webkit-transform: scale(0.0);
+  }
+  35% {
     -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: scale(0.0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0.0);
     opacity: 0;
   }
 }
@@ -469,9 +526,20 @@ header {
   0% {
     transform: scale(0.0);
     -webkit-transform: scale(0.0);
-  } 100% {
+  }
+  35% {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
     opacity: 0;
   }
 }

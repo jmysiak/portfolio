@@ -1,9 +1,11 @@
 <nav id='lateral-nav'>
   <div class='menu text-center'>
+    <div class='brand' data-menuanchor='homePage'>
+      <a class='logo' href='#homePage'>
+        <img src="{{ '/src/img/logo.svg' | prepend: site.baseurl }}">
+      </a>
+    </div>
     <ul class='navigation list-unstyled'>
-      <li data-menuanchor='homePage'>
-        <a href='#homePage'>HOME</a>
-      </li>
       <li class='item-has-children' data-menuanchor='workPage'>
         <a href='#workPage' id='workLink'>WORK</a>
         <ul class='sub-menu list-unstyled'>
@@ -18,11 +20,11 @@
           </li>
         </ul>
       </li>
-      <li data-menuanchor='aboutPage'>
-        <a href='#aboutPage'>ABOUT</a>
+      <li class='item-no-children' data-menuanchor='aboutPage'>
+        <a href='#aboutPage' id='aboutLink'>ABOUT</a>
       </li>
-      <li data-menuanchor='contactPage'>
-        <a class='current' href='#contactPage'>CONTACT</a>
+      <li class='item-no-children' data-menuanchor='contactPage'>
+        <a href='#contactPage' id='contactLink'>CONTACT</a>
       </li>
     </ul>
   </div>
