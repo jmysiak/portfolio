@@ -1,15 +1,6 @@
 <script src="{{ '/js/jquery-1.11.2.min.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/js/jquery-ui.min.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/js/fakeLoader.js' | prepend: site.baseurl }}"></script>
-<script>
-  $('body').delay(100).fadeIn(1000);
-  
-  $("#fakeLoader").fakeLoader({
-    timeToHide:2500,
-    bgColor:"#8fd6e8",
-    spinner:"spinner8"
-  });
-</script>
 <script src="{{ '/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/js/fullPage.js' | prepend: site.baseurl }}"></script>
 <script>
@@ -20,7 +11,8 @@
       sectionsColor: ['#f6f6f6'],
       scrollingSpeed: 1000,
       easing: 'easeInOutCubic',
-      scrollBar: true
+      scrollBar: false,
+      css3: false
     });
   });
 </script>
