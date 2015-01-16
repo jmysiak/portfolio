@@ -92,7 +92,7 @@ Main components
     background-color: #F6F6F6;
   }
   .work-content {
-    border-top: 1px solid rgba(0,0,0,0.07);
+    border-top: 1px solid #eeeeee;
     text-align: left;
     .container-arrows {
       display: block;
@@ -326,7 +326,7 @@ header {
   left: 0;
   top: 0;
   visibility: hidden;
-  border-right: 1px solid rgba(0,0,0,0.07);
+  border-right: 1px solid #eeeeee;
 
   /* the secondary navigation is covered by the main element */
   z-index: 1; // see partials > _variables.scss
@@ -370,6 +370,31 @@ header {
     }
   }
 
+  .social {
+    margin-bottom: 0;
+    @include transform(translateX(-10px));
+    transition: opacity .2s ease 0s;
+    -webkit-transition: opacity .2s ease 0s;
+    -moz-transition: opacity .2s ease 0s;
+    opacity: 0;
+    a {
+      color: #afafaf;
+      text-decoration: none;
+      border-bottom: solid 1px #dddddf;
+      font-style: italic;
+      line-height: 2em;
+      -webkit-transition: color 0.2s ease-out;
+      -o-transition: color 0.2s ease-out;
+      transition: color 0.2s ease-out;
+      font-size: 16px;
+      @include transition(all 0.2s ease-out);
+      &:hover, .no-touch &:hover {
+        color: #646464;
+        border-bottom: solid 1px #646464;
+      }
+    }
+  }
+
   .navigation {
     margin: 10px 0;
     // @include transition(opacity .25s ease);
@@ -403,7 +428,7 @@ header {
         line-height: 2em;
         color: #afafaf;
         &.submenu-open {
-          border-bottom: 1px solid #dddddf;
+          // border-bottom: 1px solid #dddddf;
           text-decoration: none;
           color: #484848;
         }
@@ -423,7 +448,7 @@ header {
         }
       }
       .sub-menu {
-        padding: 8px 15px;
+        padding: 9px 14px 2px;
         display: none;
         li {
           margin-bottom: 5px;
@@ -441,7 +466,7 @@ header {
       &.active {
         a {
           color: #484848;
-          border-bottom: 1px solid #dddddf;
+          // border-bottom: 1px solid #dddddf;
           &.logo {border-bottom: none;}
         }
         .sub-menu {
@@ -453,7 +478,7 @@ header {
 
   @include MQ(M) {
     .navigation {
-      margin: 20px 0;
+      margin: 0px 0px 20px;
     }
   }
 
@@ -467,7 +492,7 @@ header {
     /* smooth the scrolling on touch devices - webkit browsers */
     -webkit-overflow-scrolling: touch;
 
-    .navigation {
+    .navigation, .social {
       @include transform(translateX(0));
       transition: transform .85s ease-in-out 0.0s, opacity 1.55s 0s ease-in-out;
       -webkit-transition: -webkit-transform .85s ease-in-out 0.0s, opacity 1.55s 0s ease-in-out;

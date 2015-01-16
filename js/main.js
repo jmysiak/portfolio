@@ -49,13 +49,13 @@ jQuery(document).ready(function($){
       // event.preventDefault();
       if ($(this).hasClass('submenu-open')) {
         event.preventDefault();
-        $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle('300', 'easeInOutCubic');
+        $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(200, 'swing');
       } else {
-        $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle('300', 'easeInOutCubic');
+        $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(200, 'swing');
       }
     } else if( !$(event.target).hasClass('work') && $('.work').hasClass('submenu-open')) {
       if( !$(event.target).hasClass('sub-link')) {
-        $('.work').toggleClass('submenu-open').next('.sub-menu').slideToggle('300', 'easeInOutCubic');
+        $('.work').toggleClass('submenu-open').next('.sub-menu').slideToggle(200, 'swing');
       }
     }
   });
