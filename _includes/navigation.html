@@ -1,29 +1,29 @@
 <nav id='lateral-nav'>
   <div class='menu text-center'>
-    <div class='brand' data-menuanchor='homePage'>
-      <a class='logo' href='#homePage'>
-        <img src="{{ '/src/img/logo.svg' | prepend: site.baseurl }}">
-      </a>
-    </div>
     <ul class='navigation list-unstyled'>
-      <li class='item-has-children' data-menuanchor='workPage'>
-        <a href='#workPage' id='workLink'>WORK</a>
+      <li data-menuanchor='homePage'>
+        <a class='logo' href='#homePage'>
+          <img src="{{ '/src/img/logo.svg' | prepend: site.baseurl }}">
+        </a>
+      </li>
+      <li data-menuanchor='workPage'>
+        <a class='work' href='#workPage' id='workLink'>WORK</a>
         <ul class='sub-menu list-unstyled'>
-          <li>
-            <a href='#workPage/0'>Doggyloot</a>
+          <li data-anchor='slideOne'>
+            <a class='sub-link' href='#workPage/0'>Doggyloot</a>
           </li>
-          <li>
-            <a href='#workPage/1'>Doggyloot Admin</a>
+          <li data-anchor='slideTwo'>
+            <a class='sub-link' href='#workPage/1'>Doggyloot Admin</a>
           </li>
-          <li>
-            <a href='#workPage/2'>Personal</a>
+          <li data-anchor='slideThree'>
+            <a class='sub-link' href='#workPage/2'>Personal</a>
           </li>
         </ul>
       </li>
-      <li class='item-no-children' data-menuanchor='aboutPage'>
+      <li data-menuanchor='aboutPage'>
         <a href='#aboutPage' id='aboutLink'>ABOUT</a>
       </li>
-      <li class='item-no-children' data-menuanchor='contactPage'>
+      <li data-menuanchor='contactPage'>
         <a href='#contactPage' id='contactLink'>CONTACT</a>
       </li>
     </ul>

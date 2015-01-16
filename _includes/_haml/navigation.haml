@@ -1,27 +1,32 @@
 %nav#lateral-nav
   .menu.text-center
-    .brand{"data-menuanchor" => "homePage"}
-      %a.logo{:href=>"#homePage"}
-        %img{:src=>"{{ '/src/img/logo.svg' | prepend: site.baseurl }}"}
-
-
+    -# .brand{"data-menuanchor" => "homePage"}
+    -#   %a.logo{:href=>"#homePage"}
+    -#     %img{:src=>"{{ '/src/img/logo.svg' | prepend: site.baseurl }}"}
     %ul.navigation.list-unstyled
-      -# %li.item-no-children{"data-menuanchor" => "homePage"}
-      -#   %a#homeLink{:href => "#homePage"} HOME
+      -# Logo Section
+      %li{"data-menuanchor" => "homePage"}
+        %a.logo{:href=>"#homePage"}
+          %img{:src=>"{{ '/src/img/logo.svg' | prepend: site.baseurl }}"}
 
-      %li.item-has-children{"data-menuanchor" => "workPage"}
-        %a#workLink{:href => "#workPage"} WORK
+      -# Work Section
+      %li{"data-menuanchor" => "workPage"}
+        %a#workLink.work{:href => "#workPage"} WORK
+
+        -# Sub-menu
         %ul.sub-menu.list-unstyled
-          %li
-            %a{:href => "#workPage/0"} Doggyloot
-          %li
-            %a{:href => "#workPage/1"} Doggyloot Admin
-          %li
-            %a{:href => "#workPage/2"} Personal
+          %li{"data-anchor" => "slideOne"}
+            %a.sub-link{:href => "#workPage/0"} Doggyloot
+          %li{"data-anchor" => "slideTwo"}
+            %a.sub-link{:href => "#workPage/1"} Doggyloot Admin
+          %li{"data-anchor" => "slideThree"}
+            %a.sub-link{:href => "#workPage/2"} Personal
 
-      %li.item-no-children{"data-menuanchor" => "aboutPage"}
+      -# About Section
+      %li{"data-menuanchor" => "aboutPage"}
         %a#aboutLink{:href => "#aboutPage"} ABOUT
 
-      %li.item-no-children{"data-menuanchor" => "contactPage"}
+      -# Contact Section
+      %li{"data-menuanchor" => "contactPage"}
         %a#contactLink{:href => "#contactPage"} CONTACT
 
