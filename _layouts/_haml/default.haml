@@ -2,36 +2,36 @@
 %html{:lang => "en"}
   %head
     {% include head.html %}
-
   %body{:style => "display: none;"}
-    #fakeLoader
     %header.is-fixed
       %a#menu-trigger{:href=>"#0"}
         %span.menu-icon
 
+    -# Home page
     #fullpage.main-content
       .section
         .container-fluid
           .row
             .col-md-8.col-md-offset-2
               .row.slideshow
-                %img.img-responsive{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
-          .row.work-content
-            .col-md-8.col-md-offset-2
-              .row.slideshow
-                .col-md-8
-                  %h1 DOGGYLOOT
-                  %p.subtitle UI/UX Design, Web Development
-                  %p Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis.
-                .col-md-2.col-md-offset-2
-                  -# %p PREV NEXT
+                %h1 Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                %p Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo.
+
+      -# Work page
       .section
         .slide{"data-anchor" => "slideOne"}
           .container-fluid
             .row
               .col-md-8.col-md-offset-2
                 .row.slideshow
-                  %img.img-responsive{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
+                  .slick-slideshow
+                    .slick-slide
+                      %img.img-responsive{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
+                    .slick-slide
+                      %img.img-responsive{:src => "{{ '/src/img/ph-img-2.jpg' | prepend: site.baseurl }}"}
+                    .slick-slide
+                      %img.img-responsive{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
+
             .row.work-content
               .col-md-8.col-md-offset-2
                 .row.slideshow
@@ -45,7 +45,13 @@
             .row
               .col-md-8.col-md-offset-2
                 .row.slideshow
-                  %img.img-responsive{:src => "{{ '/src/img/ph-img-2.jpg' | prepend: site.baseurl }}"}
+                  .slick-slideshow
+                    .slick-slide
+                      %img.img-responsive{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
+                    .slick-slide
+                      %img.img-responsive{:src => "{{ '/src/img/ph-img-2.jpg' | prepend: site.baseurl }}"}
+                    .slick-slide
+                      %img.img-responsive{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
             .row.work-content
               .col-md-8.col-md-offset-2
                 .row.slideshow
@@ -59,7 +65,13 @@
             .row
               .col-md-8.col-md-offset-2
                 .row.slideshow
-                  %img.img-responsive{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
+                  .slick-slideshow
+                    .slick-slide
+                      %img.img-responsive{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
+                    .slick-slide
+                      %img.img-responsive{:src => "{{ '/src/img/ph-img-2.jpg' | prepend: site.baseurl }}"}
+                    .slick-slide
+                      %img.img-responsive{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
             .row.work-content
               .col-md-8.col-md-offset-2
                 .row.slideshow
@@ -68,38 +80,25 @@
                     %p.subtitle UI/UX Design, Web Development
                     %p Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis.
 
+      -# About page
       .section
         .container-fluid
           .row
             .col-md-8.col-md-offset-2
               .row.slideshow
-                %img.img-responsive{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
-          .row.work-content
-            .col-md-8.col-md-offset-2
-              .row.slideshow
-                .col-md-8
-                  %h1 DOGGYLOOT
-                  %p.subtitle UI/UX Design, Web Development
-                  %p Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis.
-                .col-md-2.col-md-offset-2
+                %h1 About
+                %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vestibulum id ligula porta felis euismod semper.
 
+
+      -# Contact page
       .section
         .container-fluid
           .row
             .col-md-8.col-md-offset-2
               .row.slideshow
-                %img.img-responsive{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
-          .row.work-content
-            .col-md-8.col-md-offset-2
-              .row.slideshow
-                .col-md-8
-                  %h1 DOGGYLOOT
-                  %p.subtitle UI/UX Design, Web Development
-                  %p Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis.
-                .col-md-2.col-md-offset-2
+                %h1 Contact
+                %p Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
-    -# %main.main-content
-    -#   %h1 Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.
 
     -#   {{ content }}
 

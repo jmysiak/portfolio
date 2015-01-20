@@ -1,15 +1,12 @@
 %nav#lateral-nav
   .menu.text-center
-    -# .brand{"data-menuanchor" => "homePage"}
-    -#   %a.logo{:href=>"#homePage"}
-    -#     %img{:src=>"{{ '/src/img/logo.svg' | prepend: site.baseurl }}"}
     %ul.navigation.list-unstyled
-      -# Logo Section
+      -# Logo
       %li{"data-menuanchor" => "homePage"}
         %a.logo{:href=>"#homePage"}
           %img{:src=>"{{ '/src/img/logo.svg' | prepend: site.baseurl }}"}
 
-      -# Work Section
+      -# Work
       %li{"data-menuanchor" => "workPage"}
         %a#workLink.work{:href => "#workPage"} WORK
 
@@ -18,15 +15,17 @@
           %li{"data-anchor" => "slideOne"}
             %a.sub-link{:href => "#workPage/0"} Doggyloot
           %li{"data-anchor" => "slideTwo"}
-            %a.sub-link{:href => "#workPage/1"} Doggyloot Admin
+            %a.sub-link{:href => "#workPage/1"} Doggyloot(Admin)
           %li{"data-anchor" => "slideThree"}
-            %a.sub-link{:href => "#workPage/2"} Personal
+            %a.sub-link{:href => "#workPage/2"} Personal Project
+          %li{"data-anchor" => "slideThree"}
+            %a.sub-link{:href => "#workPage/3"} Portfolio
 
-      -# About Section
+      -# About
       %li{"data-menuanchor" => "aboutPage"}
         %a#aboutLink{:href => "#aboutPage"} ABOUT
 
-      -# Contact Section
+      -# Contact
       %li{"data-menuanchor" => "contactPage"}
         %a#contactLink{:href => "#contactPage"} CONTACT
 
@@ -35,7 +34,4 @@
         %a{:href => "#"} linkedin.com/in/jakubmysiak
       %li
         %a{:href => "#"} github.com/jmysiak
-      -# %li
-      -#   %a{:href => "#"} twitter.com/j_mysiak
-      -# %li
-      -#   %a{:href => "#"} instagram.com/jmysiak
+

@@ -1,7 +1,11 @@
+-# Jquery
 %script{:src  => "{{ '/js/jquery-1.11.2.min.js' | prepend: site.baseurl }}"}
 %script{:src  => "{{ '/js/jquery-ui.min.js' | prepend: site.baseurl }}"}
-%script{:src  => "{{ '/js/fakeLoader.js' | prepend: site.baseurl }}"}
+
+-# Bootstrap
 %script{:src  => "{{ '/js/bootstrap.min.js' | prepend: site.baseurl }}"}
+
+-# Vendor
 %script{:src  => "{{ '/js/fullPage.js' | prepend: site.baseurl }}"}
 :javascript
   $(document).ready(function() {
@@ -15,5 +19,20 @@
       css3: false
     });
   });
+%script{:src  => "{{ '/js/slick.js' | prepend: site.baseurl }}"}
+:javascript
+  $(document).ready(function() {
+    $('.slick-slideshow').slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      fade: true,
+      slide: 'div',
+      cssEase: 'linear',
+      arrows: false,
+      accessibility: false
+    });
+  });
 
+-# Custom
 %script{:src  => "{{ '/js/main.js' | prepend: site.baseurl }}"}
