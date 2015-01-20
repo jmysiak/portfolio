@@ -15,19 +15,15 @@ $slick-dot-size: 6px !default;
 $slick-opacity-default: .75 !default;
 $slick-color-on-hover: #484848 !default;
 $slick-color-not-active: #AFAFAF !default;
-// $site-baseurl: "{{ '/src/img/left.svg' | prepend: site.baseurl }}"
 
-
-
-
-@function slick-image-url($url) {
-  @if function-exists(image-url) {
-    @return image-url($url, false, false);
-  }
-  @else  {
-    @return url($slick-loader-path + $url);
-  }
-}
+// @function slick-image-url($url) {
+//   @if function-exists(image-url) {
+//     @return image-url($url, false, false);
+//   }
+//   @else  {
+//     @return url($slick-loader-path + $url);
+//   }
+// }
 
 // @function slick-font-url($url) {
 //   @if function-exists(font-url) {
@@ -140,15 +136,15 @@ $slick-color-not-active: #AFAFAF !default;
 
 
 /* Icons */
-@if $slick-font-family == "slick" {
-  @font-face {
-    font-family:"slick";
-    src: url("{{ '/src/fonts/slick.eot' | prepend: site.baseurl }}");
-    src: url("{{ '/src/fonts/slick.eot?#iefix' | prepend: site.baseurl }} format('embedded-opentype')"), url("{{ '/src/fonts/slick.woff' | prepend: site.baseurl }} format('woff')"), url("{{ '/src/fonts/slick.ttf' | prepend: site.baseurl }} format('truetype')"), url("{{ '/src/fonts/slick.svg#slick' | prepend: site.baseurl }} format('svg')");
-    font-weight: normal;
-    font-style: normal;
-  }
-}
+// @if $slick-font-family == "slick" {
+//   @font-face {
+//     font-family: "slick";
+//     src: url("{{ '/src/fonts/slick.eot' | prepend: site.baseurl }}");
+//     src: url("{{ '/src/fonts/slick.eot?#iefix' | prepend: site.baseurl }} format('embedded-opentype')"), url("{{ '/src/fonts/slick.woff' | prepend: site.baseurl }} format('woff')"), url("{{ '/src/fonts/slick.ttf' | prepend: site.baseurl }} format('truetype')"), url("{{ '/src/fonts/slick.svg#slick' | prepend: site.baseurl }} format('svg')");
+//     font-weight: normal;
+//     font-style: normal;
+//   }
+// }
 
 
 /* Arrows */
