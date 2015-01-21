@@ -1,10 +1,16 @@
 // Fonts
+
+$slick-font-family: "slick" !default;
+
 @if $slick-font-family == "slick" {
   @font-face {
     font-family: "slick";
-    src: url("{{ '/src/fonts/slick.eot' | prepend: site.baseurl }}");
-    src: url("{{ '/src/fonts/slick.eot?#iefix' | prepend: site.baseurl }} format('embedded-opentype')"), url("{{ '/src/fonts/slick.woff' | prepend: site.baseurl }} format('woff')"), url("{{ '/src/fonts/slick.ttf' | prepend: site.baseurl }} format('truetype')"), url("{{ '/src/fonts/slick.svg#slick' | prepend: site.baseurl }} format('svg')");
-    font-weight: normal;
-    font-style: normal;
+    src: url("../src/fonts/slick.eot");
+    src: url("../src/fonts/slick.eot?#iefix") format("embedded-opentype"),
+      url("../src/fonts/slick.woff") format("woff"),
+      url("../src/fonts/slick.ttf") format("truetype"),
+      url("../src/fonts/slick.svg#slick") format("svg");
+      font-weight: normal;
+      font-style: normal;
   }
 }
