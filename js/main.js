@@ -39,6 +39,7 @@ jQuery(document).ready(function($){
         event.preventDefault();
         $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(200, 'swing');
       } else {
+        event.preventDefault();
         $(this).toggleClass('submenu-open').next('.sub-menu').slideToggle(200, 'swing');
       }
     } else if( !$(event.target).hasClass('work') && $('.work').hasClass('submenu-open')) {
