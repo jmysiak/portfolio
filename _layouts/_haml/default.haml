@@ -9,14 +9,20 @@
 
     -# Home page
     #fullpage.main-content
-      .section
+      .section.landing-section
         .container-fluid
           .row
-            .col-md-8.col-md-offset-2
-              .row.slideshow
-                %h1 Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                %p Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo.
-
+            .col-md-6.col-md-offset-3
+              .row.slideshow.text-left
+                %h1
+                  HEY THERE, I'M JAKUB MYSIAK,
+                  %br
+                  A DESIGNER & WEB DEVELOPER
+                  %br
+                  CURRENTLY BASED IN CHICAGO
+                %p
+                  "Curiosity is a willing, a proud, an eager confession of ignorance."
+                  %span – S. Leonard Rubinstein
       -# Work page
       .section
         .slide{"data-anchor" => "slideOne"}
@@ -30,15 +36,15 @@
                     .slick-slide
                       %img.img-responsive{:src => "{{ '/src/img/ph-img-2.jpg' | prepend: site.baseurl }}"}
                     .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/ph-img-3.jpg' | prepend: site.baseurl }}"}
+                      %img.img-responsive{:src => "{{ '/src/img/ph-img-5.jpg' | prepend: site.baseurl }}"}
 
-            .row.work-content
-              .col-md-8.col-md-offset-2
-                .row.slideshow
-                  .col-md-8.content-copy
-                    %h1 DOGGYLOOT
-                    %p.subtitle UI/UX Design, Web Development
-                    %p Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis.
+            -# .row.work-content
+            -#   .col-md-8.col-md-offset-2
+            -#     .row.slideshow
+            -#       .col-md-12.content-copy
+            -#         %h1 DOGGYLOOT
+            -#         %p.subtitle UI/UX Design, Web Development
+            -#         %p Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
         .slide{"data-anchor" => "slideTwo"}
           .container-fluid
@@ -52,13 +58,13 @@
                       %img.img-responsive{:src => "{{ '/src/img/ph-img-2.jpg' | prepend: site.baseurl }}"}
                     .slick-slide
                       %img.img-responsive{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
-            .row.work-content
-              .col-md-8.col-md-offset-2
-                .row.slideshow
-                  .col-md-8.content-copy
-                    %h1 DOGGYLOOT ADMIN
-                    %p.subtitle UI/UX Design, Web Development
-                    %p Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis.
+            -# .row.work-content
+            -#   .col-md-8.col-md-offset-2
+            -#     .row.slideshow
+            -#       .col-md-12.content-copy
+            -#         %h1 DOGGYLOOT ADMIN
+            -#         %p.subtitle UI/UX Design, Web Development
+            -#         %p Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
         .slide{"data-anchor" => "slideThree"}
           .container-fluid
@@ -72,32 +78,49 @@
                       %img.img-responsive{:src => "{{ '/src/img/ph-img-2.jpg' | prepend: site.baseurl }}"}
                     .slick-slide
                       %img.img-responsive{:src => "{{ '/src/img/ph-img.jpg' | prepend: site.baseurl }}"}
-            .row.work-content
-              .col-md-8.col-md-offset-2
-                .row.slideshow
-                  .col-md-8.content-copy
-                    %h1 PERSONAL
-                    %p.subtitle UI/UX Design, Web Development
-                    %p Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis.
+            -# .row.work-content
+            -#   .col-md-12.col-md-offset-2
+            -#     .row.slideshow
+            -#       .col-md-8.content-copy
+            -#         %h1 PERSONAL
+            -#         %p.subtitle UI/UX Design, Web Development
+            -#         %p Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
       -# About page
-      .section
+      .section.about-section
         .container-fluid
           .row
-            .col-md-8.col-md-offset-2
-              .row.slideshow
-                %h1 About
-                %p Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vestibulum id ligula porta felis euismod semper.
-
+            .col-md-6.col-md-offset-3
+              .row.slideshow.text-left
+                %h1 About Me
+                %p
+                  I admire vulnerability, desire constructive criticism, and get lost in learning for the sake of peronsonal achievement. This should express, in no uncertain terms, that intellectual curiosity is the root of my pleasure and success. Here's to pushing the boundaries of creative potential.
+                  .sub-section
+                    %p
+                      %span SKILLS &amp; EXPERTISE –
+                      UI/UX Design, Frontend Development, Web Development, Branding & Packaging
+                    %p
+                      %span TECHNOLOGY –
+                      HTML5, HAML, CSS3, SASS, Javascript, jQuery, Ruby/Ruby on Rails, GIT
+                    %p
+                      %span SOFTWARE –
+                      Photoshop, Illustrator, InDesign, After Effects, Lightroom, Cinema 4D
 
       -# Contact page
-      .section
+      .section.contact-section
         .container-fluid
           .row
-            .col-md-8.col-md-offset-2
-              .row.slideshow
-                %h1 Contact
-                %p Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            .col-md-6.col-md-offset-3
+              .row.slideshow.text-left
+                %h1 Say Hello!
+                %p
+                  What's on your mind? I'm interested, and am very happy to meet you.
+                %p
+                  %a{:href=>"mailto:jakub@jakubmysiak.com"} jakub@jakubmysiak.com
+                %p
+                  %a{:href=>"https://www.facebook.com/jmysiak"} facebook.com/jmysiak
+                  %a{:href=>"https://www.twitter.com/j_mysiak"} twitter.com/j_mysiak
+                  %a{:href=>"http://www.instagram.com/jmysiak/"} instagram.com/jmysiak/
 
 
     -#   {{ content }}

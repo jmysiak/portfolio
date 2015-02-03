@@ -5,7 +5,7 @@
 $slick-font-path: "../src/fonts/" !default;
 $slick-loader-path: "../" !default;
 $slick-arrow-color: white !default;
-$slick-dot-color: #AFAFAF !default;
+$slick-dot-color: #bdbdbd !default;
 $slick-dot-color-active: #484848 !default;
 $slick-prev-character: '\2190' !default;
 $slick-next-character: '\2192' !default;
@@ -215,7 +215,7 @@ $slick-color-not-active: #AFAFAF !default;
 /* Dots */
 
 .slick-slider {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .slick-dots {
   position: absolute;

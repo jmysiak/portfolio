@@ -126,6 +126,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  github-pages (= 31)
+  github-pages
   haml
   json
