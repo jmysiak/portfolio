@@ -1,4 +1,8 @@
-portfolio
+Portfolio v1.0
 =========
 
-Pages/Jekyll portfolio site
+http://jmysiak.github.io/portfolio/
+
+```
+$bundle exec jekyll serve --baseurl --watch
+```
