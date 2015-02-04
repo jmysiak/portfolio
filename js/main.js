@@ -1,12 +1,8 @@
 jQuery(document).ready(function($){
 
-  console.log($('body').css('display'));
-
-  console.log('Document Ready');
+  console.log("Don\'t judge my code, its the first pass!");
 
   $('body').fadeIn(1000);
-
-  console.log($('body').css('display'));
 
   var $lateral_menu_trigger = $('#menu-trigger'),
       $content_wrapper = $('.main-content'),

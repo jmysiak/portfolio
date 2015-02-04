@@ -7,7 +7,7 @@
       %a#menu-trigger{:href=>"#0"}
         %span.menu-icon
 
-    -# Home page
+    -# Home section
     #fullpage.main-content
       .section.landing-section
         .container-fluid
@@ -15,17 +15,18 @@
             .col-md-6.col-md-offset-3
               .row.slideshow.text-left
                 %h1
-                  HEY THERE, I'M JAKUB MYSIAK,
+                  HEY, I'M JAKUB MYSIAK,
                   %br
                   A DESIGNER & WEB DEVELOPER
                   %br
-                  CURRENTLY BASED IN CHICAGO
+                  BASED IN CHICAGO
                 %p
                   "Curiosity is a willing, a proud, an eager confession of ignorance."
                   %span – S. Leonard Rubinstein
-      -# Work page
+
+      -# Work section
       .section
-        -# Doggyloot store
+        -# Doggyloot slide
         .slide{"data-anchor" => "slideOne"}
           .container-fluid
             .row
@@ -38,14 +39,6 @@
                       %img.img-responsive{:src => "{{ '/src/img/dl-store-b.jpg' | prepend: site.baseurl }}"}
                     .slick-slide
                       %img.img-responsive{:src => "{{ '/src/img/dl-store-c.jpg' | prepend: site.baseurl }}"}
-
-            -# .row.work-content
-            -#   .col-md-8.col-md-offset-2
-            -#     .row.slideshow
-            -#       .col-md-12.content-copy
-            -#         %h1 DOGGYLOOT
-            -#         %p.subtitle UI/UX Design, Web Development
-            -#         %p Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
         -# Doggyloot admin
         .slide{"data-anchor" => "slideTwo"}
@@ -60,13 +53,6 @@
                       %img.img-responsive{:src => "{{ '/src/img/dl-admin-b.jpg' | prepend: site.baseurl }}"}
                     .slick-slide
                       %img.img-responsive{:src => "{{ '/src/img/dl-admin-c.jpg' | prepend: site.baseurl }}"}
-            -# .row.work-content
-            -#   .col-md-8.col-md-offset-2
-            -#     .row.slideshow
-            -#       .col-md-12.content-copy
-            -#         %h1 DOGGYLOOT ADMIN
-            -#         %p.subtitle UI/UX Design, Web Development
-            -#         %p Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
         .slide{"data-anchor" => "slideThree"}
           .container-fluid
@@ -78,17 +64,8 @@
                       %img.img-responsive{:src => "{{ '/src/img/ad-a.jpg' | prepend: site.baseurl }}"}
                     .slick-slide
                       %img.img-responsive{:src => "{{ '/src/img/ad-b.jpg' | prepend: site.baseurl }}"}
-                    -# .slick-slide
-                    -#   %img.img-responsive{:src => "{{ '/src/img/ad-a.jpg' | prepend: site.baseurl }}"}
-            -# .row.work-content
-            -#   .col-md-12.col-md-offset-2
-            -#     .row.slideshow
-            -#       .col-md-8.content-copy
-            -#         %h1 PERSONAL
-            -#         %p.subtitle UI/UX Design, Web Development
-            -#         %p Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
-      -# About page
+      -# About section
       .section.about-section
         .container-fluid
           .row
@@ -108,7 +85,7 @@
                       %span SOFTWARE –
                       Photoshop, Illustrator, InDesign, After Effects, Lightroom, Cinema 4D
 
-      -# Contact page
+      -# Contact section
       .section.contact-section
         .container-fluid
           .row
@@ -116,16 +93,16 @@
               .row.slideshow.text-left
                 %h1 Say Hello!
                 %p
-                  What's on your mind? I'm interested, and am very happy to meet you.
+                  I’m
+                  %span available
+                  to take on freelance work right now. What's on your mind? I'm interested, and am very happy to meet you so don’t hesitate to shoot me a message!
                 %p
-                  %a{:href=>"mailto:jakub@jakubmysiak.com"} jakub@jakubmysiak.com
+                  Email –
+                  %a.email{:href=>"mailto:jakub@jakubmysiak.com"} jakub@jakubmysiak.com
                 %p
                   %a{:href=>"https://www.facebook.com/jmysiak"} facebook.com/jmysiak
                   %a{:href=>"https://www.twitter.com/j_mysiak"} twitter.com/j_mysiak
                   %a{:href=>"http://www.instagram.com/jmysiak/"} instagram.com/jmysiak/
-
-
-    -#   {{ content }}
 
     {% include navigation.html %}
 

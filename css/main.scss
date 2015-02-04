@@ -23,29 +23,27 @@ html * {
 html, body {
   height: 100%;
 }
-
 body {
   font: {
     family: $roboto;
   }
-  color: $dark-gray;
+  color: $main-text;
   background-color: $background;
   &.loaded {
     opacity: 1;
   }
   h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: $brandon;
-    color: $light-gray;
+    color: $main-text;
   }
   p {
     font-family: $roboto;
-    color: $dark-gray;
-    letter-spacing: .2px;
-    line-height: 24px;
+    color: $main-text;
+    letter-spacing: 1px;
+    line-height: 30px;
     font-size: 14px;
   }
   a {
-    // color: $link;
     &:focus, .no-touch &:focus {
       text-decoration: none;
       outline: none;
@@ -57,14 +55,7 @@ body {
       -moz-outline-style: none;
     }
   }
-
 }
-
-/* --------------------------------
-
-Modules - reusable parts of our design
-
--------------------------------- */
 
 .img-replace { /* replace text with a background-image */
   display: inline-block;
@@ -77,12 +68,6 @@ Modules - reusable parts of our design
   overflow: hidden;
 }
 
-/* --------------------------------
-
-Main components
-
--------------------------------- */
-
 .main-content {
   /* set a min-height and a z-index to be sure that the main element completely covers the lateral menu */
   min-height: 100%;
@@ -90,86 +75,82 @@ Main components
   background-color: $background;
   z-index: 2;
   text-align: center;
-
   .section {
     background-color: $background;
     h1 {
       text-transform: uppercase;
       font-size: 26px;
       font-weight: 500;
-      letter-spacing: 1.5px;
+      letter-spacing: 3px;
     }
     p {
-      // letter-spacing: .55px;
-      // line-height: 1.5;
-      // font-size: 18px;
-      color: $dark-gray;
+      color: $main-text;
     }
     &.landing-section {
       h1 {
         line-height: 64px;
-        font-size: 45px;
+        font-size: 42px;
         margin-top: 0;
         margin-bottom: 30px;
-        color: $light-gray;
+        color: $main-text;
       }
       p {
         font-size: 14px;
         padding-left: 28px;
-        border-left: solid 2px #eee;
+        border-left: solid 2px $border-color;
         padding-top: 2px;
+        letter-spacing: 1px;
         span {
-          color: $light-gray;
+          color: $secondary-text;
           font-family: $brandon;
           font-size: 14px;
           font-weight: 600;
           padding-bottom: 4px;
           display: block;
           padding-top: 10px;
-          letter-spacing: 1px;
+          letter-spacing: 2px;
           text-transform: uppercase;
         }
       }
     }
     &.about-section, &.contact-section {
       h1 {
-        color: $brandon;
-        margin-bottom: 20px;
+        font-family: $brandon;
+        margin-bottom: 22px;
         font-size: 24px;
         font-weight: 600;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
       }
       h5 {
         font-size: 16px;
         font-weight: 600;
         letter-spacing: 1.5px;
         text-transform: uppercase;
-        border-top: solid 1px #eee;
+        border-top: solid 1px $border-color;
         padding-top: 20px;
         margin-top: 30px;
         padding-bottom: 12px;
       }
       .sub-section {
-        border-left: 2px solid #eee;
+        border-left: 2px solid $border-color;
         padding-left: 28px;
         padding-bottom: 12px;
         padding-top: 5px;
         margin-bottom: 20px;
         p {
           font-size: 14px;
-          line-height: 1.5;
+          line-height: 1.75;
           margin-bottom: 20px;
-          letter-spacing: .2px;
           font-weight: normal;
           span {
             font-family: $brandon;
-            color: $light-gray;
-            font-size: 14px;
+            color: $secondary-text;
+            font-size: 12px;
             font-weight: 600;
             padding-bottom: 8px;
             display: block;
             padding-top: 10px;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
           }
           &:last-child {
             margin-bottom: 0px;
@@ -179,12 +160,52 @@ Main components
     }
     &.about-section {
       p {
-        margin-bottom: 28px;
+        margin-bottom: 32px;
+      }
+    }
+    &.contact-section {
+      p {
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 0px;
+        }
+        span {
+          color: $link;
+        }
+        a {
+          color: $secondary-text;
+          font-style: italic;
+          letter-spacing: 1px;
+          text-decoration: none;
+          line-height: 30px;
+          padding: 0px 0 2px;
+          border-bottom: solid 1px $border-color;
+          margin-right: 10px;
+          @include transition(all 0.2s ease-out);
+          &.email {
+            color: $main-text;
+            font-style: normal;
+            border-bottom: solid 1px $border-color;
+          }
+          &:hover, .no-touch &:hover {
+            text-decoration: none;
+            color: $main-text;
+          }
+          &:focus, .no-touch &:focus {
+            text-decoration: none;
+            outline: none;
+            -moz-outline-style: none;
+          }
+          &:active, .no-touch &:active {
+            text-decoration: none;
+            outline: none;
+            -moz-outline-style: none;
+          }
+        }
       }
     }
   }
   .work-content {
-    // border-top: 1px solid $border-color;
     text-align: left;
     .container-arrows {
       display: block;
@@ -227,7 +248,6 @@ Main components
             // @include transform(translateX(3px));
           }
         }
-
       }
     }
     h1 {
@@ -235,44 +255,31 @@ Main components
       font-weight: 600;
       letter-spacing: 1.5px;
       margin-bottom: 7px;
-      color: $dark-gray;
+      color: $main-text;
       margin-top: 18px;
     }
     p {
       font-size: 18px;
-      color: $dark-gray;
+      color: $main-text;
       letter-spacing: inherit;
       line-height: 1.5;
       font-weight: 400;
-      // margin: 0 0 22px;
       &.subtitle {
         margin-bottom: 12px;
       }
-      // &.tech {
-      //   font-style: italic;
-      //   padding-top: 7px;
-      //   border-top: 1px solid #eee;
-      //   font-size: 14px;
-      //   color: #b3b3b3;
-      //   margin-bottom: 0;
-      // }
     }
     .col-md-2 {
       text-align: right;
     }
   }
-
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
-
   @include transition-property(transform);
   @include transition-duration(.4s);
-
   &.lateral-menu-is-open {
     @include transform(translateX(260px));
   }
-
   @include MQ(M) {
   }
 }
@@ -284,56 +291,44 @@ header {
   height: 40px;
   width: 40px;
   z-index: $header-zindex;
-
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
-
   @include transition-property(transform);
   @include transition-duration(.4s);
-
   &.lateral-menu-is-open {
     @include transform(translateX(260px));
   }
-
   &.is-fixed {
     position: fixed;
   }
-
   @include MQ(M) {
   }
 }
-
 
 #top-nav {
   position: absolute;
   top: 0;
   right: 120px;
   height: 100%;
-
   display: none;
-
   ul {
     height: 100%;
     padding-top: 18px;
   }
-
   li {
     display: inline-block;
     margin-right: 1em;
   }
-
   a {
     display: inline-block;
     padding: .5em;
-    color: #FFFFFF;
+    color: $white;
     text-transform: uppercase;
     font-weight: 500;
-
     .no-touch &:hover {
-      color: rgba(#FFFFFF, .7);
+      color: rgba($white, .7);
     }
   }
-
   @include MQ(M) {
     display: block;
   }
@@ -345,14 +340,13 @@ header {
   top: 0;
   height: 100%;
   width: 40px;
-
   .menu-icon {
     display: inline-block;
     position: absolute;
     @include center;
     width: 18px;
     height: 2px;
-    background-color: $dark-gray;
+    background-color: $main-text;
     transition-duration: 0.6s;
     transition-timing-function: cubic-bezier(.75, 0, .29, 1.01);
     &::before, &::after {
@@ -365,38 +359,31 @@ header {
       transition-duration: 0.6s;
       transition-timing-function: cubic-bezier(.75, 0, .29, 1.01);
     }
-
     &::before {
       bottom: 6px;
     }
-
     &::after {
       top: 6px;
     }
   }
-
   &.is-clicked {
     .menu-icon {
-      background-color: rgba($dark-gray, 0);
+      background-color: rgba($main-text, 0);
       &::before, &::after {
-        background-color: rgba($dark-gray, 1);
+        background-color: rgba($main-text, 1);
       }
-
       &::before {
         bottom: 0;
         @include transform(rotate(45deg));
       }
-
       &::after {
         top: 0;
         @include transform(rotate(-225deg));
       }
     }
   }
-
   @include MQ(M) {
     width: 40px;
-
     .menu-icon {
       @include center(xy);
     }
@@ -409,22 +396,17 @@ header {
   left: 0;
   top: 0;
   visibility: hidden;
-  // border-right: 1px solid $border-color;
   z-index: 1;
   width: 260px;
-  background-color: #FFFFFF;
+  background-color: $white;
   overflow-y: auto;
-
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
-
   -webkit-transition: -webkit-transform .25s 0s, visibility 0s .4s;
   -moz-transition: -moz-transform .25s 0s, visibility 0s .4s;
   transition: transform .25s 0s, visibility 0s .4s;
-
   @include transform(translateX(-80px));
-
   .menu {
     width: 100%;
     position: absolute;
@@ -440,7 +422,6 @@ header {
       }
     }
   }
-
   .social {
     margin-bottom: 0;
     @include transform(translateX(-10px));
@@ -449,25 +430,24 @@ header {
     -moz-transition: opacity .2s ease 0s;
     opacity: 0;
     a {
-      color: $light-gray;
+      color: $secondary-text;
       font-size: 13px;
       font-style: italic;
-      letter-spacing: .2px;
+      letter-spacing: .55px;
       text-decoration: none;
       line-height: 30px;
       padding: 0px 0 2px;
       border-bottom: solid 1px $border-color;
-      // -webkit-transition: color 0.2s ease-out;
-      // -o-transition: color 0.2s ease-out;
-      // transition: color 0.2s ease-out;
       @include transition(all 0.2s ease-out);
+      &.mail {
+
+      }
       &:hover, .no-touch &:hover {
-        color: $dark-gray;
+        color: $main-text;
         border-bottom: solid 1px $border-color;
       }
     }
   }
-
   .navigation {
     margin: 10px 0;
     @include transform(translateX(-10px));
@@ -475,7 +455,6 @@ header {
     -webkit-transition: opacity .2s ease 0s;
     -moz-transition: opacity .2s ease 0s;
     opacity: 0;
-
     li {
       margin-bottom: 18px;
       &:first-child {
@@ -497,14 +476,14 @@ header {
         letter-spacing: 2px;
         @include transition(color 0.2s ease-out);
         line-height: 28px;
-        color: $light-gray;
+        color: $secondary-text;
         &.submenu-open {
           text-decoration: none;
-          color: $dark-gray;
+          color: $main-text;
         }
         &:hover, .no-touch &:hover {
           text-decoration: none;
-          color: $dark-gray;
+          color: $main-text;
         }
         &:focus, .no-touch &:focus {
           text-decoration: none;
@@ -518,7 +497,6 @@ header {
         }
       }
       .sub-menu {
-        // padding: 9px 0px 2px;
         display: none;
         li {
           margin-bottom: 0px;
@@ -526,13 +504,13 @@ header {
             font-family: $roboto;
             font-size: 14px;
             text-transform: none;
-            color: $light-gray;
+            color: $secondary-text;
             font-weight: normal;
-            letter-spacing: .2px;
+            letter-spacing: .55px;
             line-height: 28px;
             margin-left: 0px;
             &:hover, .no-touch &:hover {
-              color: $dark-gray;
+              color: $main-text;
               border-bottom: none;
             }
           }
@@ -540,7 +518,7 @@ header {
       }
       &.active {
         a {
-          color: $dark-gray;
+          color: $main-text;
           &.logo {border-bottom: none;}
         }
         .sub-menu {
@@ -549,23 +527,19 @@ header {
       }
     }
   }
-
   @include MQ(M) {
     .navigation {
       margin: 0px 0px 18px;
     }
   }
-
   &.lateral-menu-is-open {
     @include transform(translateX(0));
     visibility: visible;
     -webkit-transition: -webkit-transform .4s 0s, visibility 0s 0s;
     -moz-transition: -moz-transform .4s 0s, visibility 0s 0s;
     transition: transform .4s 0s, visibility 0s 0s;
-
     /* smooth the scrolling on touch devices - webkit browsers */
     -webkit-overflow-scrolling: touch;
-
     .navigation, .social {
       @include transform(translateX(0));
       transition: transform .85s ease-in-out 0.0s, opacity 1.55s 0s ease-in-out;
