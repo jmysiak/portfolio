@@ -88,11 +88,21 @@ body {
     }
     &.landing-section {
       h1 {
-        line-height: 64px;
-        font-size: 42px;
         margin-top: 0;
         margin-bottom: 30px;
         color: $main-text;
+        letter-spacing: 3px;
+        line-height: 64px;
+        @include mobile {
+          line-height: 44px;
+          font-size: 22px;
+        }
+        @include tablet {
+          font-size: 38px;
+        }
+        @include desktop {
+          font-size: 38px;
+        }
       }
       p {
         font-size: 14px;

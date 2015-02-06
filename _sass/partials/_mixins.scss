@@ -32,6 +32,25 @@
   }
 }
 
+@mixin mobile {
+  @media (max-width: #{$screen-xs-max}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+
 // border radius
 
 @mixin border-radius($radius:.25em) {
