@@ -191,12 +191,13 @@ body {
           margin-bottom: 0px;
           text-align: center;
           p {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-size: 12px;
-            line-height: 22px;
+            line-height: 20px;
             span {
               font-size: 10px;
-              padding-bottom: 4px;
+              padding-bottom: 2px;
+              padding-top: 5px;
             }
           }
         }
@@ -206,14 +207,15 @@ body {
         @include mobile {
           font-size: 14px;
           text-align: center;
-          margin-bottom: 14px;
+          margin-bottom: 10px;
+          padding-top: 10px;
         }
       }
       p {
         margin-bottom: 32px;
         @include mobile {
           font-size: 12px;
-          line-height: 24px;
+          line-height: 22px;
           text-align: center;
           margin-bottom: 8px;
         }
