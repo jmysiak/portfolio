@@ -111,6 +111,17 @@ body {
         border-left: solid 2px $border-color;
         padding-top: 2px;
         letter-spacing: 1px;
+        span {
+          color: $secondary-text;
+          font-family: $brandon;
+          font-size: 14px;
+          font-weight: 600;
+          padding-bottom: 4px;
+          display: block;
+          padding-top: 10px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
         @include mobile {
           padding-left: 10px;
           padding-right: 10px;
@@ -124,17 +135,6 @@ body {
           span {
             font-size: 12px;
           }
-        }
-        span {
-          color: $secondary-text;
-          font-family: $brandon;
-          font-size: 14px;
-          font-weight: 600;
-          padding-bottom: 4px;
-          display: block;
-          padding-top: 10px;
-          letter-spacing: 2px;
-          text-transform: uppercase;
         }
       }
     }
