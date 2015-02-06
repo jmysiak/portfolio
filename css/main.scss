@@ -186,7 +186,7 @@ body {
           border-left: none;
           padding-left: 10px;
           padding-bottom: 0px;
-          padding-top: 5px;
+          padding-top: 0px;
           padding-right: 10px;
           margin-bottom: 0px;
           text-align: center;
@@ -197,7 +197,7 @@ body {
             span {
               font-size: 10px;
               padding-bottom: 2px;
-              padding-top: 5px;
+              padding-top: 0px;
             }
           }
         }
@@ -207,8 +207,8 @@ body {
         @include mobile {
           font-size: 14px;
           text-align: center;
-          margin-bottom: 10px;
-          padding-top: 10px;
+          margin-bottom: 5px;
+          padding-top: 5px;
         }
       }
       p {
@@ -218,12 +218,6 @@ body {
           line-height: 22px;
           text-align: center;
           margin-bottom: 8px;
-        }
-        @include tablet {
-          font-size: 38px;
-        }
-        @include desktop {
-          font-size: 38px;
         }
       }
     }
