@@ -94,8 +94,9 @@ body {
         letter-spacing: 3px;
         line-height: 64px;
         @include mobile {
-          line-height: 44px;
-          font-size: 22px;
+          line-height: 38px;
+          font-size: 18px;
+          text-align: center;
         }
         @include tablet {
           font-size: 38px;
@@ -110,6 +111,14 @@ body {
         border-left: solid 2px $border-color;
         padding-top: 2px;
         letter-spacing: 1px;
+        @include mobile {
+          padding-left: 10px;
+          padding-right: 10px;
+          border-left: none;
+          padding-top: 2px;
+          letter-spacing: 1px;
+          text-align: center;
+        }
         span {
           color: $secondary-text;
           font-family: $brandon;
@@ -297,7 +306,6 @@ body {
 header {
   position: absolute;
   top: 20px;
-  left: 18px;
   height: 40px;
   width: 40px;
   z-index: $header-zindex;
@@ -305,6 +313,19 @@ header {
   -webkit-backface-visibility: hidden;
   @include transition-property(transform);
   @include transition-duration(.4s);
+  @include mobile {
+    left: 5px;
+    top: 5px;
+  }
+  @include tablet {
+    left: 5px;
+    top: 5px;
+  }
+  @include desktop {
+    left: 18px;
+    top: 20px;
+  }
+
   &.lateral-menu-is-open {
     @include transform(translateX(260px));
   }
