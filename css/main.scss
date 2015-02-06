@@ -94,8 +94,8 @@ body {
         letter-spacing: 3px;
         line-height: 64px;
         @include mobile {
-          line-height: 38px;
-          font-size: 18px;
+          line-height: 36px;
+          font-size: 14px;
           text-align: center;
         }
         @include tablet {
@@ -118,6 +118,8 @@ body {
           padding-top: 2px;
           letter-spacing: 1px;
           text-align: center;
+          line-height: 26px;
+          font-size: 12px;
         }
         span {
           color: $secondary-text;
