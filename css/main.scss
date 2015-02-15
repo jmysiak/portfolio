@@ -297,13 +297,9 @@ body {
           margin-right: 12px;
           opacity: .3;
           display: block;
-          // -webkit-transition: -webkit-transform 0.2s ease, opacity 0.25s ease;
-          // -moz-transition: -moz-transform 0.2s ease, opacity 0.25s ease;
-          // transition: transform 0.2s ease, opacity 0.25s ease;
           &:hover {
             cursor: pointer;
             opacity: 1;
-            // @include transform(translateX(-3px));
           }
         }
         &.fp-next {
@@ -315,13 +311,9 @@ body {
           margin-right: 0px;
           opacity: .3;
           display: block;
-          // -webkit-transition: -webkit-transform 0.2s ease, opacity 0.25s ease;
-          // -moz-transition: -moz-transform 0.2s ease, opacity 0.25s ease;
-          // transition: transform 0.2s ease, opacity 0.25s ease;
           &:hover {
             cursor: pointer;
             opacity: 1;
-            // @include transform(translateX(3px));
           }
         }
       }
