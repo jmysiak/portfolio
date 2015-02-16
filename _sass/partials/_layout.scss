@@ -1,25 +1,12 @@
-// breakpoints
-
-$S:     320px;
-$M:     768px;
-$L:     1170px;
-
 // media queries
-
-@mixin MQ($canvas) {
-  @if $canvas == S {
-   @media only screen and (min-width: $S) { @content; }
+@mixin media($device) {
+  @if $device == mobile {
+   @media (max-width: #{$screen-xs-max}) { @content; }
   }
-  @else if $canvas == M {
-   @media only screen and (min-width: $M) { @content; }
+  @else if $device == tablet {
+   @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-md-max}) { @content; }
   }
-  @else if $canvas == L {
-   @media only screen and (min-width: $L) { @content; }
+  @else if $device == desktop {
+   @media (min-width: #{$screen-md-min}) { @content; }
   }
 }
-
-@mixin column($percentage, $float-direction:left) {
-  width: 100% * $percentage;
-  float: $float-direction;
-}
-

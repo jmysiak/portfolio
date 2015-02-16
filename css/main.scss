@@ -24,14 +24,9 @@ html, body {
   height: 100%;
 }
 body {
-  font: {
-    family: $roboto;
-  }
+  font-family: $roboto;
   color: $main-text;
   background-color: $background;
-  &.loaded {
-    opacity: 1;
-  }
   h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: $brandon;
     color: $main-text;
@@ -41,23 +36,19 @@ body {
     color: $main-text;
     letter-spacing: 1px;
     line-height: 30px;
-    font-size: 14px;
+    font-size: em(14, 14);
   }
   a {
     &:focus, .no-touch &:focus {
-      text-decoration: none;
-      outline: none;
-      -moz-outline-style: none;
+      @extend %focus-active;
     }
     &:active, .no-touch &:active {
-      text-decoration: none;
-      outline: none;
-      -moz-outline-style: none;
+      @extend %focus-active;
     }
   }
 }
 
-.img-replace { /* replace text with a background-image */
+.img-replace {
   display: inline-block;
   overflow: hidden;
   text-indent: 100%;
@@ -69,7 +60,6 @@ body {
 }
 
 .main-content {
-  /* set a min-height and a z-index to be sure that the main element completely covers the lateral menu */
   min-height: 100%;
   position: relative;
   background-color: $background;
@@ -79,7 +69,7 @@ body {
     background-color: $background;
     h1 {
       text-transform: uppercase;
-      font-size: 26px;
+      font-size: em(26, 14);
       font-weight: 500;
       letter-spacing: 3px;
     }
@@ -93,20 +83,20 @@ body {
         color: $main-text;
         letter-spacing: 3px;
         line-height: 64px;
-        @include mobile {
+        @include media(mobile) {
           line-height: 36px;
-          font-size: 14px;
+          font-size: em(14, 14);
           text-align: center;
         }
-        @include tablet {
-          font-size: 38px;
+        @include media(tablet) {
+          font-size: em(38, 14);
         }
-        @include desktop {
-          font-size: 38px;
+        @include media(desktop) {
+          font-size: em(38, 14);
         }
       }
       p {
-        font-size: 14px;
+        font-size: em(14, 14);
         padding-left: 28px;
         border-left: solid 2px $border-color;
         padding-top: 2px;
@@ -114,7 +104,7 @@ body {
         span {
           color: $secondary-text;
           font-family: $brandon;
-          font-size: 14px;
+          font-size: em(14, 14);
           font-weight: 600;
           padding-bottom: 4px;
           display: block;
@@ -122,7 +112,7 @@ body {
           letter-spacing: 2px;
           text-transform: uppercase;
         }
-        @include mobile {
+        @include media(mobile) {
           padding-left: 10px;
           padding-right: 10px;
           border-left: none;
@@ -130,10 +120,10 @@ body {
           letter-spacing: 1px;
           text-align: center;
           line-height: 22px;
-          font-size: 12px;
+          font-size: em(12, 14);
           margin-bottom: 0;
           span {
-            font-size: 12px;
+            font-size: em(14, 14);
           }
         }
       }
@@ -142,12 +132,12 @@ body {
       h1 {
         font-family: $brandon;
         margin-bottom: 22px;
-        font-size: 24px;
+        font-size: em(24, 14);
         font-weight: 600;
         letter-spacing: 3px;
       }
       h5 {
-        font-size: 16px;
+        font-size: em(16, 14);
         font-weight: 600;
         letter-spacing: 1.5px;
         text-transform: uppercase;
@@ -163,14 +153,13 @@ body {
         padding-top: 5px;
         margin-bottom: 20px;
         p {
-          font-size: 14px;
+          font-size: em(14, 14);
           line-height: 1.75;
           margin-bottom: 20px;
-          font-weight: normal;
           span {
             font-family: $brandon;
             color: $secondary-text;
-            font-size: 12px;
+            font-size: em(12, 14);
             font-weight: 600;
             padding-bottom: 8px;
             display: block;
@@ -185,8 +174,8 @@ body {
     }
     &.about-section {
       h1 {
-        @include mobile {
-          font-size: 14px;
+        @include media(mobile) {
+          font-size: em(14, 14);
           text-align: center;
           margin-bottom: 12px;
           padding-top: 5px;
@@ -194,15 +183,15 @@ body {
       }
       p {
         margin-bottom: 32px;
-        @include mobile {
-          font-size: 12px;
+        @include media(mobile) {
+          font-size: em(12, 14);
           line-height: 22px;
           text-align: center;
           margin-bottom: 14px;
         }
       }
       .sub-section {
-        @include mobile {
+        @include media(mobile) {
           border-left: none;
           padding-left: 10px;
           padding-bottom: 0px;
@@ -212,10 +201,10 @@ body {
           text-align: center;
           p {
             margin-bottom: 5px;
-            font-size: 12px;
+            font-size: em(12, 14);
             line-height: 20px;
             span {
-              font-size: 10px;
+              font-size: em(11.5, 14);
               padding-bottom: 2px;
               padding-top: 0px;
             }
@@ -225,8 +214,8 @@ body {
     }
     &.contact-section {
       h1 {
-        @include mobile {
-          font-size: 14px;
+        @include media(mobile) {
+          font-size: em(14, 14);
           text-align: center;
           margin-bottom: 12px;
           padding-top: 5px;
@@ -236,8 +225,8 @@ body {
         margin-bottom: 30px;
         &:last-child {margin-bottom: 0px;}
         span {color: $link;}
-        @include mobile {
-          font-size: 12px;
+        @include media(mobile) {
+          font-size: em(12, 14);
           line-height: 22px;
           text-align: center;
           margin-bottom: 20px;
@@ -268,14 +257,10 @@ body {
             color: $main-text;
           }
           &:focus, .no-touch &:focus {
-            text-decoration: none;
-            outline: none;
-            -moz-outline-style: none;
+            @extend %focus-active;
           }
           &:active, .no-touch &:active {
-            text-decoration: none;
-            outline: none;
-            -moz-outline-style: none;
+            @extend %focus-active;
           }
         }
       }
@@ -319,7 +304,7 @@ body {
       }
     }
     h1 {
-      font-size: 22px;
+      font-size: em(22, 14);
       font-weight: 600;
       letter-spacing: 1.5px;
       margin-bottom: 7px;
@@ -327,7 +312,7 @@ body {
       margin-top: 18px;
     }
     p {
-      font-size: 18px;
+      font-size: em(18, 14);
       color: $main-text;
       letter-spacing: inherit;
       line-height: 1.5;
@@ -348,8 +333,6 @@ body {
   &.lateral-menu-is-open {
     @include transform(translateX(260px));
   }
-  @include MQ(M) {
-  }
 }
 
 header {
@@ -362,26 +345,23 @@ header {
   -webkit-backface-visibility: hidden;
   @include transition-property(transform);
   @include transition-duration(.4s);
-  @include mobile {
+  @include media(mobile) {
     left: 5px;
     top: 5px;
   }
-  @include tablet {
+  @include media(tablet) {
     left: 5px;
     top: 5px;
   }
-  @include desktop {
+  @include media(desktop) {
     left: 18px;
     top: 20px;
   }
-
   &.lateral-menu-is-open {
     @include transform(translateX(260px));
   }
   &.is-fixed {
     position: fixed;
-  }
-  @include MQ(M) {
   }
 }
 
@@ -409,7 +389,7 @@ header {
       color: rgba($white, .7);
     }
   }
-  @include MQ(M) {
+  @include media(mobile) {
     display: block;
   }
 }
@@ -462,12 +442,6 @@ header {
       }
     }
   }
-  @include MQ(M) {
-    width: 40px;
-    .menu-icon {
-      @include center(xy);
-    }
-  }
 }
 
 #lateral-nav {
@@ -511,7 +485,7 @@ header {
     opacity: 0;
     a {
       color: $secondary-text;
-      font-size: 13px;
+      font-size: em(13, 14);
       font-style: italic;
       letter-spacing: .55px;
       text-decoration: none;
@@ -529,7 +503,7 @@ header {
     }
   }
   .navigation {
-    margin: 10px 0;
+    margin: 0px 0px 18px;
     @include transform(translateX(-10px));
     transition: opacity .2s ease 0s;
     -webkit-transition: opacity .2s ease 0s;
@@ -552,7 +526,7 @@ header {
         position: relative;
         text-transform: uppercase;
         font-weight: 600;
-        font-size: 16px;
+        font-size: em(16, 14);
         letter-spacing: 2px;
         @include transition(color 0.2s ease-out);
         line-height: 28px;
@@ -566,14 +540,10 @@ header {
           color: $main-text;
         }
         &:focus, .no-touch &:focus {
-          text-decoration: none;
-          outline: none;
-          -moz-outline-style: none;
+          @extend %focus-active;
         }
         &:active, .no-touch &:active {
-          text-decoration: none;
-          outline: none;
-          -moz-outline-style: none;
+          @extend %focus-active;
         }
       }
       .sub-menu {
@@ -582,10 +552,10 @@ header {
           margin-bottom: 0px;
           a {
             font-family: $roboto;
-            font-size: 14px;
+            font-size: em(14, 14);
+            font-weight: 400;
             text-transform: none;
             color: $secondary-text;
-            font-weight: normal;
             letter-spacing: .55px;
             line-height: 28px;
             margin-left: 0px;
@@ -605,11 +575,6 @@ header {
           a {border-bottom: none;}
         }
       }
-    }
-  }
-  @include MQ(M) {
-    .navigation {
-      margin: 0px 0px 18px;
     }
   }
   &.lateral-menu-is-open {

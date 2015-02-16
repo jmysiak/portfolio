@@ -1,17 +1,4 @@
-// rem fallback - credits: http://zerosixthree.se/
-
-// @function calculateRem($size) {
-//   $remSize: $size / 16px;
-//   @return $remSize * 1rem;
-// }
-
-// @mixin font-size($size) {
-//   font-size: $size;
-//   font-size: calculateRem($size);
-// }
-
 // center vertically and/or horizontally an absolute positioned element
-
 @mixin center($xy:xy) {
   @if $xy == xy {
     left: 50%;
@@ -31,28 +18,3 @@
     @include transform(translateY(-50%));
   }
 }
-
-@mixin mobile {
-  @media (max-width: #{$screen-xs-max}) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-md-max}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: #{$screen-md-min}) {
-    @content;
-  }
-}
-
-// border radius
-
-@mixin border-radius($radius:.25em) {
-  border-radius: $radius;
-}
-

@@ -1,5 +1,4 @@
 // colors
-
 $main-text: #546E7A; // main text
 $secondary-text: #B0BEC5; // secondary text
 $white: #FFFFFF; // white text
@@ -7,13 +6,13 @@ $border-color: #F2F4F5; // border color
 $link: #4B9CC2; // links
 $background: #FAFBFB; // body background color
 
-// z-index
-
 $secondary-nav: 1;
 $content-zindex: 2;
 $header-zindex: 3;
 
-// header height
-
-$header-S: 50px;
-$header-M: 70px;
+// :focus :active extend
+%focus-active {
+  text-decoration: none;
+  outline: none;
+  -moz-outline-style: none;
+}
