@@ -6,3 +6,6 @@ http://jmysiak.github.io/portfolio/
 ```
 bundle exec jekyll server --baseurl --watch
 ```
+```
+rake build
+```
