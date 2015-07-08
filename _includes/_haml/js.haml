@@ -27,7 +27,15 @@
       easing: 'easeInOutCubic',
       scrollBar: false,
       css3: false,
-      controlArrows: false
+      controlArrows: false,
+      afterLoad: function(anchorLink, index){
+        var loadedSection = $(this);
+
+        //using anchorLink
+        if(anchorLink == 'workPage'){
+          console.log("Work Section Loaded");
+        }
+      }
     });
   });
 %script{:src  => "{{ '/js/slick.js' | prepend: site.baseurl }}"}
