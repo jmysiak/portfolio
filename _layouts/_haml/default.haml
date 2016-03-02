@@ -17,17 +17,38 @@
                 %h1
                   HEY, I'M JAKUB MYSIAK,
                   %br
-                  A DESIGNER & WEB DEVELOPER
+                  A DESIGNER & DEVELOPER
                   %br
                   BASED IN SAN FRANCISCO
-                %p
-                  "Curiosity is a willing, a proud, an eager confession of ignorance."
-                  %span – S. Leonard Rubinstein
+                -# %p
+                -#   "Curiosity is a willing, a proud, an eager confession of ignorance."
+                -#   %span – S. Leonard Rubinstein
 
       -# Work section
       .section
-        -# HighGround slide
+  
+        -# URX slide
         .slide{"data-anchor" => "slideOne"}
+          .container-fluid
+            .row
+              .col-md-8.col-md-offset-2
+                .slideshow
+                  .slick-slideshow
+                    .slick-slide
+                      %img.img-responsive{:src => "{{ '/src/img/urx-hp-a.jpg' | prepend: site.baseurl }}"}
+                    -# .slick-slide
+                    -#   %img.img-responsive{:src => "{{ '/src/img/dl-store-b.jpg' | prepend: site.baseurl }}"}
+                    -# .slick-slide
+                    -#   %img.img-responsive{:src => "{{ '/src/img/dl-store-c.jpg' | prepend: site.baseurl }}"}
+                    -# .slick-slide
+                    -#   %img.img-responsive{:src => "{{ '/src/img/dl-admin-a.jpg' | prepend: site.baseurl }}"}
+                    -# .slick-slide
+                    -#   %img.img-responsive{:src => "{{ '/src/img/dl-admin-b.jpg' | prepend: site.baseurl }}"}
+                    -# .slick-slide
+                    -#   %img.img-responsive{:src => "{{ '/src/img/dl-admin-c.jpg' | prepend: site.baseurl }}"}
+
+        -# HighGround slide
+        .slide{"data-anchor" => "slideTwo"}
           .container-fluid
             .row
               .col-md-8.col-md-offset-2
@@ -37,7 +58,7 @@
                       %img.img-responsive{:src => "{{ '/src/img/hg-mobile.jpg' | prepend: site.baseurl }}"}
 
         -# Doggyloot slide
-        .slide{"data-anchor" => "slideTwo"}
+        .slide{"data-anchor" => "slideThree"}
           .container-fluid
             .row
               .col-md-8.col-md-offset-2
@@ -57,7 +78,7 @@
                       %img.img-responsive{:src => "{{ '/src/img/dl-admin-c.jpg' | prepend: site.baseurl }}"}
 
         -# Personal project slide
-        .slide{"data-anchor" => "slideThree"}
+        .slide{"data-anchor" => "slideFour"}
           .container-fluid
             .row
               .col-md-8.col-md-offset-2

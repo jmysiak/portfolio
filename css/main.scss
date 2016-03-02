@@ -82,7 +82,7 @@ body {
         margin-bottom: 30px;
         color: $main-text;
         letter-spacing: 3px;
-        line-height: 64px;
+        line-height: 70px;
         @include media(mobile) {
           line-height: 36px;
           font-size: em(14, 14);
