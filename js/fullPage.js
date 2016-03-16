@@ -33,7 +33,7 @@
       'continuousVertical': false,
       'normalScrollElements': null,
       'scrollOverflow': false,
-      'touchSensitivity': 10,
+      'touchSensitivity': 1,
       'normalScrollElementTouchThreshold': 5,
 
       //Accessibility
