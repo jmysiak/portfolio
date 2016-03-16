@@ -18,6 +18,7 @@ jQuery(document).ready(function($){
     });
     $('#lateral-nav').toggleClass('lateral-menu-is-open');
     $('.slideshow').toggleClass('slideshow-active');
+    $('.fp-slidesNav').toggleClass('fp-slideshow-active')
     //check if submenu is open
     if($('#workLink').hasClass('submenu-open')) {
       $('#workLink').removeClass('submenu-open').next('.sub-menu').delay(1200).slideUp(200);

@@ -17,23 +17,23 @@
       'navigationPosition': 'right',
       'navigationColor': '#000',
       'navigationTooltips': [],
-      'slidesNavigation': false,
-      'slidesNavPosition': 'bottom',
+      'slidesNavigation': true,
+      'slidesNavPosition': 'top',
       'scrollBar': false,
 
       //scrolling
       'css3': true,
       'scrollingSpeed': 700,
       'autoScrolling': true,
-      'easing': 'easeInQuart',
-      'easingcss3': 'ease',
+      'easing': 'easeInOutCubic',
+      'easingcss3': 'linear',
       'loopBottom': false,
       'loopTop': false,
       'loopHorizontal': true,
       'continuousVertical': false,
       'normalScrollElements': null,
       'scrollOverflow': false,
-      'touchSensitivity': 5,
+      'touchSensitivity': 10,
       'normalScrollElementTouchThreshold': 5,
 
       //Accessibility
@@ -1527,15 +1527,21 @@
     * Creates a landscape navigation bar with dots for horizontal sliders.
     */
     function addSlidesNavigation(section, numSlides){
-      section.append('<div class="fp-slidesNav"><ul></ul></div>');
+      section.append('<div class="fp-slidesNav"><ul class="list-inline"></ul></div>');
       var nav = section.find('.fp-slidesNav');
 
       //top or bottom
       nav.addClass(options.slidesNavPosition);
 
       for(var i=0; i< numSlides; i++){
-        nav.find('ul').append('<li><a href="#"><span></span></a></li>');
+        nav.find('ul').append('<li><a href="#"><span class="nav-item"></span></a></li>');
       }
+
+      nav.find('.nav-item:eq(0)').append('URX');
+      nav.find('.nav-item:eq(1)').append('HighGround');
+      nav.find('.nav-item:eq(2)').append('Doggyloot');
+      nav.find('.nav-item:eq(3)').append('Personal');
+
 
       //centering it
       nav.css('margin-left', '-' + (nav.width()/2) + 'px');
