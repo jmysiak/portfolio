@@ -599,7 +599,7 @@ header {
   img.img-responsive {
     width: 980px;
     margin: 0 auto;
-    padding: 10px 0px 0px;
+    padding: 40px 0px 0px;
   }
   @include transform(translateX(0));
   -webkit-transition: -webkit-transform .4s 0s;
@@ -611,6 +611,11 @@ header {
       -webkit-transition: -webkit-transform .4s 0s;
       -moz-transition: -moz-transform .4s 0s;
       transition: transform .4s 0s;
+    }
+    img.img-responsive {
+      width: 980px;
+      margin: 0 auto;
+      padding: 0px 0px;
     }
   }
 }
@@ -633,7 +638,7 @@ header {
   width: 500px;
   left: 50%;
   margin-left: -250px;
-  top: 20px;
+  top: 22px;
   z-index: 4;
   -webkit-user-select: none;
   -moz-user-select: none;
