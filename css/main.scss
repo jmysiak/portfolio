@@ -644,6 +644,9 @@ header {
   -webkit-transition: all .4s 0s;
   -moz-transition: all .4s 0s;
   transition: all .4s 0s;
+  @media screen and (max-width: $screen-md-min) {
+    display: none;  
+  }
   .list-inline > li {
     padding-left: 12px;
     padding-right: 12px;
