@@ -35,11 +35,11 @@
                 .slideshow
                   .slick-slideshow
                     .slick-slide
+                      %img.img-responsive{:src => "{{ '/src/img/urx-hp-a.jpg' | prepend: site.baseurl }}"}
+                    .slick-slide
                       %img.img-responsive{:src => "{{ '/src/img/urx-snapchat.jpg' | prepend: site.baseurl }}"}
                     .slick-slide
                       %img.img-responsive{:src => "{{ '/src/img/urx-apple.jpg' | prepend: site.baseurl }}"}
-                    .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/urx-hp-a.jpg' | prepend: site.baseurl }}"}
 
         -# HighGround slide
         .slide{"data-anchor" => "slideTwo"}
