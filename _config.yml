@@ -10,8 +10,8 @@ url: "http://jmysiak.github.io/portfolio" # the base hostname & protocol for you
 # Where things are
 source:      .
 destination: ./_site
-layouts:     ./_layouts
-data_source: ./_data
+layouts_dir:     ./_layouts
+data_dir: ./_data
 collections: null
 
 # Handling Reading
