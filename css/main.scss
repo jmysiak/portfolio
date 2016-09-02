@@ -147,8 +147,8 @@ body {
         padding-bottom: 12px;
       }
       .sub-section {
-        border-left: 2px solid $border-color;
-        padding-left: 28px;
+        // border-left: 2px solid $border-color;
+        // padding-left: 28px;
         padding-bottom: 12px;
         padding-top: 5px;
         margin-bottom: 20px;
@@ -510,14 +510,14 @@ header {
     -moz-transition: opacity .2s ease 0s;
     opacity: 0;
     li {
-      margin-bottom: 18px;
+      margin-bottom: 24px;
       &:first-child {
         margin-bottom: 0px;
         a {
           padding-bottom: 0px;
           img {
             margin: 0 auto 52px;
-            width: 92px;
+            width: 86px;
           }
         }
       }
@@ -526,7 +526,7 @@ header {
         position: relative;
         text-transform: uppercase;
         font-weight: 600;
-        font-size: em(16, 14);
+        font-size: em(14, 14);
         letter-spacing: 2px;
         @include transition(color 0.2s ease-out);
         line-height: 28px;
@@ -552,7 +552,7 @@ header {
           margin-bottom: 0px;
           a {
             font-family: $roboto;
-            font-size: em(14, 14);
+            font-size: em(13, 13);
             font-weight: 400;
             text-transform: none;
             color: $secondary-text;
