@@ -3,9 +3,9 @@
   %head
     {% include head.html %}
   %body{:style => "display: none;"}
-    %header.is-fixed
-      %a#menu-trigger{:href=>"#0"}
-        %span.menu-icon
+    -# %header.is-fixed
+    -#   %a#menu-trigger{:href=>"#0"}
+    -#     %span.menu-icon
 
     -# Home section
     #fullpage.main-content
@@ -13,75 +13,68 @@
         .container-fluid
           .row
             .col-md-6.col-md-offset-3.col-sm-10.col-sm-offset-1
-              .slideshow.text-left
-                %h1
-                  HEY, I'M JAKUB MYSIAK,
-                  %br
-                  A PRODUCT DESIGNER
-                  %br
-                  BASED IN SAN FRANCISCO
-                -# %p
-                -#   "Curiosity is a willing, a proud, an eager confession of ignorance."
-                -#   %span – S. Leonard Rubinstein
+              .slideshow.text-center
+                %a{:href=>"mailto:jakub@jakubmysiak.com"}
+                  %i.em.em-construction
 
       -# Work section
-      .section
+      -# .section
 
         -# Whil slide
-        .slide{"data-anchor" => "slideOne"}
-          .container-fluid
-            .row
-              .col-md-8.col-md-offset-2
-                .slideshow
-                  .slick-slideshow
-                    .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/whil-mobile.jpg' | prepend: site.baseurl }}"}
+        -# .slide{"data-anchor" => "slideOne"}
+        -#   .container-fluid
+        -#     .row
+        -#       .col-md-8.col-md-offset-2
+        -#         .slideshow
+        -#           .slick-slideshow
+        -#             .slick-slide
+        -#               %img.img-responsive{:src => "{{ '/src/img/whil-mobile.jpg' | prepend: site.baseurl }}"}
 
         -# URX slide
-        .slide{"data-anchor" => "slideTwo"}
-          .container-fluid
-            .row
-              .col-md-8.col-md-offset-2
-                .slideshow
-                  .slick-slideshow
-                    .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/urx-hp-a.jpg' | prepend: site.baseurl }}"}
-                    .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/urx-cards.jpg' | prepend: site.baseurl }}"}
-                    .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/urx-snapchat.jpg' | prepend: site.baseurl }}"}
-                    .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/urx-apple.jpg' | prepend: site.baseurl }}"}
+        -# .slide{"data-anchor" => "slideTwo"}
+        -#   .container-fluid
+        -#     .row
+        -#       .col-md-8.col-md-offset-2
+        -#         .slideshow
+        -#           .slick-slideshow
+        -#             .slick-slide
+        -#               %img.img-responsive{:src => "{{ '/src/img/urx-hp-a.jpg' | prepend: site.baseurl }}"}
+        -#             .slick-slide
+        -#               %img.img-responsive{:src => "{{ '/src/img/urx-cards.jpg' | prepend: site.baseurl }}"}
+        -#             .slick-slide
+        -#               %img.img-responsive{:src => "{{ '/src/img/urx-snapchat.jpg' | prepend: site.baseurl }}"}
+        -#             .slick-slide
+        -#               %img.img-responsive{:src => "{{ '/src/img/urx-apple.jpg' | prepend: site.baseurl }}"}
 
         -# HighGround slide
-        .slide{"data-anchor" => "slideThree"}
-          .container-fluid
-            .row
-              .col-md-8.col-md-offset-2
-                .slideshow
-                  .slick-slideshow
-                    .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/hg-mobile.jpg' | prepend: site.baseurl }}"}
+        -# .slide{"data-anchor" => "slideThree"}
+        -#   .container-fluid
+        -#     .row
+        -#       .col-md-8.col-md-offset-2
+        -#         .slideshow
+        -#           .slick-slideshow
+        -#             .slick-slide
+        -#               %img.img-responsive{:src => "{{ '/src/img/hg-mobile.jpg' | prepend: site.baseurl }}"}
 
         -# Doggyloot slide
-        .slide{"data-anchor" => "slideFour"}
-          .container-fluid
-            .row
-              .col-md-8.col-md-offset-2
-                .slideshow
-                  .slick-slideshow
-                    .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/dl-store-a.jpg' | prepend: site.baseurl }}"}
-                    .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/dl-store-b.jpg' | prepend: site.baseurl }}"}
-                    .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/dl-store-c.jpg' | prepend: site.baseurl }}"}
-                    .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/dl-admin-a.jpg' | prepend: site.baseurl }}"}
-                    .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/dl-admin-b.jpg' | prepend: site.baseurl }}"}
-                    .slick-slide
-                      %img.img-responsive{:src => "{{ '/src/img/dl-admin-c.jpg' | prepend: site.baseurl }}"}
+        -# .slide{"data-anchor" => "slideFour"}
+        -#   .container-fluid
+        -#     .row
+        -#       .col-md-8.col-md-offset-2
+        -#         .slideshow
+        -#           .slick-slideshow
+        -#             .slick-slide
+        -#               %img.img-responsive{:src => "{{ '/src/img/dl-store-a.jpg' | prepend: site.baseurl }}"}
+        -#             .slick-slide
+        -#               %img.img-responsive{:src => "{{ '/src/img/dl-store-b.jpg' | prepend: site.baseurl }}"}
+        -#             .slick-slide
+        -#               %img.img-responsive{:src => "{{ '/src/img/dl-store-c.jpg' | prepend: site.baseurl }}"}
+        -#             .slick-slide
+        -#               %img.img-responsive{:src => "{{ '/src/img/dl-admin-a.jpg' | prepend: site.baseurl }}"}
+        -#             .slick-slide
+        -#               %img.img-responsive{:src => "{{ '/src/img/dl-admin-b.jpg' | prepend: site.baseurl }}"}
+        -#             .slick-slide
+        -#               %img.img-responsive{:src => "{{ '/src/img/dl-admin-c.jpg' | prepend: site.baseurl }}"}
 
         -# Personal project slide
         -# .slide{"data-anchor" => "slideFour"}
@@ -96,43 +89,43 @@
         -#               %img.img-responsive{:src => "{{ '/src/img/ad-b.jpg' | prepend: site.baseurl }}"}
 
       -# About section
-      .section.about-section
-        .container-fluid
-          .row
-            .col-md-6.col-md-offset-3.col-sm-10.col-sm-offset-1
-              .slideshow.text-left
-                %h1 About Me
-                %p
-                  I admire vulnerability, desire constructive criticism, and get lost in learning for the sake of personal achievement. This should express, in no uncertain terms, that intellectual curiosity is the root of my pleasure and success. Here's to pushing the boundaries of creative potential.
-                  .sub-section
-                    %p
-                      %span SKILLS &amp; EXPERTISE –
-                      UI/UX Design, Frontend Development, Web Development, Branding & Packaging
-                    %p
-                      %span TECHNOLOGY –
-                      HTML5, HAML, CSS3, SASS, Javascript, jQuery, Ruby/Ruby on Rails, GIT
-                    %p
-                      %span SOFTWARE –
-                      Photoshop, Illustrator, InDesign, After Effects, Sketch
+      -# .section.about-section
+      -#   .container-fluid
+      -#     .row
+      -#       .col-md-6.col-md-offset-3.col-sm-10.col-sm-offset-1
+      -#         .slideshow.text-left
+      -#           %h1 About Me
+      -#           %p
+      -#             I admire vulnerability, desire constructive criticism, and get lost in learning for the sake of personal achievement. This should express, in no uncertain terms, that intellectual curiosity is the root of my pleasure and success. Here's to pushing the boundaries of creative potential.
+      -#             .sub-section
+      -#               %p
+      -#                 %span SKILLS &amp; EXPERTISE –
+      -#                 UI/UX Design, Frontend Development, Web Development, Branding & Packaging
+      -#               %p
+      -#                 %span TECHNOLOGY –
+      -#                 HTML5, HAML, CSS3, SASS, Javascript, jQuery, Ruby/Ruby on Rails, GIT
+      -#               %p
+      -#                 %span SOFTWARE –
+      -#                 Photoshop, Illustrator, InDesign, After Effects, Sketch
 
       -# Contact section
-      .section.contact-section
-        .container-fluid
-          .row
-            .col-md-6.col-md-offset-3.col-sm-10.col-sm-offset-1
-              .slideshow.text-left
-                %h1 Say Hello!
-                %p
-                  I’m
-                  %span available
-                  to take on freelance work right now. What's on your mind? I'm interested, and am very happy to meet you so don’t hesitate to shoot me a message!
-                %p
-                  Email –
-                  %a.email{:href=>"mailto:jakub@jakubmysiak.com"} jakub@jakubmysiak.com
-                %p
-                  %a.social-link{:href=>"https://www.facebook.com/jmysiak"} facebook.com/jmysiak
-                  %a.social-link{:href=>"https://www.twitter.com/j_mysiak"} twitter.com/j_mysiak
-                  %a.social-link{:href=>"http://www.instagram.com/jmysiak/"} instagram.com/jmysiak/
+      -# .section.contact-section
+      -#   .container-fluid
+      -#     .row
+      -#       .col-md-6.col-md-offset-3.col-sm-10.col-sm-offset-1
+      -#         .slideshow.text-left
+      -#           %h1 Say Hello!
+      -#           %p
+      -#             I’m
+      -#             %span available
+      -#             to take on freelance work right now. What's on your mind? I'm interested, and am very happy to meet you so don’t hesitate to shoot me a message!
+      -#           %p
+      -#             Email –
+      -#             %a.email{:href=>"mailto:jakub@jakubmysiak.com"} jakub@jakubmysiak.com
+      -#           %p
+      -#             %a.social-link{:href=>"https://www.facebook.com/jmysiak"} facebook.com/jmysiak
+      -#             %a.social-link{:href=>"https://www.twitter.com/j_mysiak"} twitter.com/j_mysiak
+      -#             %a.social-link{:href=>"http://www.instagram.com/jmysiak/"} instagram.com/jmysiak/
 
-    {% include navigation.html %}
+    -# {% include navigation.html %}
     {% include js.html %}
